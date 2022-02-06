@@ -1,13 +1,32 @@
+body {
+    font-family: cursive;
+}
+
 h1,
 h2 {
-    font-family: sans-serif;
     color: gray;
 }
 
 h1 {
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid red;
+}
+
+em {
+    font-family: serif;
 }
 
 p {
+    color: hotpink;
+}
+
+p.grin {
     color: green;
+}
+
+p.blu {
+    color: blue;
+}
+
+p.fiol {
+    color: blueviolet;
 }
