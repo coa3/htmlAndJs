@@ -1,32 +1,60 @@
 body {
-    font-family: cursive;
+    font-size: small;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    line-height: 1.6em;
 }
 
 h1,
 h2 {
-    color: gray;
+    color: #007e7e;
 }
 
 h1 {
-    border-bottom: 2px solid red;
+    font-size: 150%;
 }
 
-em {
-    font-family: serif;
+h2 {
+    font-size: 130%;
 }
 
-p {
-    color: hotpink;
+#guarantee {
+    line-height: 1.9em;
+    font-style: italic;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #444444;
+    border-color: white;
+    border-width: 1px;
+    border-style: dashed;
+    background-color: #a7cece;
+    padding: 25px;
+    padding-left: 80px;
+    margin: 30px;
+    margin-right: 250px;
+    background-image: url(images/background.gif);
+    background-repeat: no-repeat;
+    background-position: top left;
 }
 
-p.grin {
-    color: green;
+#elixirs {
+    line-height: normal;
+    color: black;
+    border-width: thin;
+    border-style: solid;
+    border-color: #007e7e;
+    width: 362px;
+    background-image: url(images/cocktail.gif);
+    background-repeat: repeat-x;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    margin-left: 20px;
+    text-align: center;
 }
 
-p.blu {
-    color: blue;
+div h2 {
+    color: black;
 }
 
-p.fiol {
-    color: blueviolet;
+div h3 {
+    color: #d12c47;
 }
