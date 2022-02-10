@@ -7,25 +7,26 @@
         
         #header {
             background-color: #675c47;
-            margin: 10px;
             height: 108px;
+            margin: 10px 10px 0px 10px;
         }
         
         #main {
+            display: table-cell;
             background: #efe5d0 url(starbuzz/images/background.gif) top left;
             font-size: 105%;
             padding: 15px;
-            margin: 0px 10px 10px 10px;
-            width: 420px;
-            float: left;
+            vertical-align: top;
         }
         
         #sidebar {
+            display: table-cell;
             font-family: Georgia, 'Times New Roman', Times, serif;
-            background: #efe5d0 url(starbuzz/images/background.gif) bottom right;
+            background: #efe5d0 url(starbuzz/images/background.gif) top right;
             font-size: 105%;
             padding: 15px;
-            margin: 0px 10px 10px 470px;
+            vertical-align: top;
+            float: right;
         }
         
         h1 {
@@ -56,9 +57,57 @@
         
         #footer {
             background-color: #675c47;
-            margin: 10px;
+            margin: 10px 10px 0px 10px;
             height: 108px;
             text-align: center;
             color: white;
             clear: left;
+        }
+        
+        #allcontent {
+            width: 800px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background-color: #675c47;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        #tableContainer {
+            display: table;
+            border-spacing: 10px;
+        }
+        
+        #tableRow {
+            display: table-row;
+        }
+        
+        #drinks {
+            display: table-cell;
+            background: #efe5d0 top left;
+            margin: 20%;
+            font-size: 105%;
+            padding: 15px;
+            vertical-align: top;
+        }
+        
+        #headerSlogan {
+            float: right;
+        }
+        
+        #award {
+            position: absolute;
+            top: 30px;
+            left: 600px;
+        }
+        
+        #coupon {
+            position: fixed;
+            top: 300px;
+            left: -90px;
+        }
+        
+        #coupon a,
+        img {
+            border: none;
         }
