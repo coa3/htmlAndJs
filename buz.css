@@ -5,13 +5,13 @@
             margin: 0px;
         }
         
-        #header {
+        header {
             background-color: #675c47;
             height: 108px;
             margin: 10px 10px 0px 10px;
         }
         
-        #main {
+        section#blog {
             display: table-cell;
             background: #efe5d0 url(starbuzz/images/background.gif) top left;
             font-size: 105%;
@@ -19,7 +19,7 @@
             vertical-align: top;
         }
         
-        #sidebar {
+        aside {
             display: table-cell;
             font-family: Georgia, 'Times New Roman', Times, serif;
             background: #efe5d0 url(starbuzz/images/background.gif) top right;
@@ -55,7 +55,7 @@
             border-bottom: thin dotted red;
         }
         
-        #footer {
+        footer {
             background-color: #675c47;
             margin: 10px 10px 0px 10px;
             height: 108px;
@@ -82,7 +82,7 @@
             display: table-row;
         }
         
-        #drinks {
+        section#drinks {
             display: table-cell;
             background: #efe5d0 top left;
             margin: 20%;
@@ -91,7 +91,7 @@
             vertical-align: top;
         }
         
-        #headerSlogan {
+        header img#headerSlogan {
             float: right;
         }
         
