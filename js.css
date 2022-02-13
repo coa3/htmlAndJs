@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Emblema One";
-    src: url("http://wickedlysmart.com/hfhtmlcss/chapter8/journal/EmblemaOneRegular.woff"), url("http://wickedlysmart.com/hfhtmlcss/chapter8/journal/EmblemaOneRegular.ttf");
+    src: url("http://wickedlysmart.com/hfhtmlcss/chapter8/journal/EmblemaOne-Regular.woff"), url("http://wickedlysmart.com/hfhtmlcss/chapter8/journal/EmblemaOne-Regular.ttf");
 }
 
 body {
@@ -40,4 +40,57 @@ dl {
 
 blockquote {
     font-style: italic;
+}
+
+table {
+    margin-left: 20px;
+    margin-right: 20px;
+    border: thin solid black;
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+
+.tabl {
+    margin-left: 20px;
+    margin-right: 20px;
+    border: thin solid black;
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: thin dotted gray;
+    padding-top: 8px;
+}
+
+tr:nth-child odd {
+    background-color: #fcba7a;
+}
+
+th {
+    background-color: #cc6600;
+}
+
+caption {
+    font-style: italic;
+    padding-top: 8px;
+}
+
+.centre {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+table.centre {
+    background-color: white;
+}
+
+li {
+    list-style-image: url(images/backpack.gif);
+    padding-top: 5px;
+    margin-left: 20px;
 }
