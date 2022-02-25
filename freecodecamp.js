@@ -43,6 +43,16 @@ function testGreaterThan(val = 1) {
         return "Over 10";
     }
 
+    function testElse(val) {
+        let result = "";
+        if (val > 5) {
+            result = "Bigger than 5";
+        } else {
+            result = "5 or Smaller";
+        }
+        return result;
+    }
+
     function testLogicalAnd(val) {
         if (val <= 50 && val >= 25) {
             return "Yes";
