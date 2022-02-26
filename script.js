@@ -1,52 +1,33 @@
-let a = 19;
-
-
-// >= <= == !=
-// if (a != 9) {
-//     // true
-//     console.log('Yes');
-// }
-// else {
-//     console.log('else');
+// document.querySelector('button').onclick = () => {
+//     console.log(document.querySelector('#one').value);
+//     // style
+//     document.querySelector('button').style.backgroundColor = document.querySelector('#one').value
 // }
 
-// 14 < a < 45
+// document.querySelector('#one').oninput = () => {
+//     console.log(document.querySelector('#one').value);
+//     document.querySelector('span').innerHTML = document.querySelector('#one').value
+// }
 
-const button = document.querySelector('button');
-const input = document.querySelector('.age');
-
-// () => стрелочная функция
-button.onclick = () => {
-    let num = +input.value;
-    if (num >= 16 && num < 60) {
-        console.log('welcome!!!');
-    }
-    else if (num > 60) {
-        console.log('Ты точно сюда?');
-    }
-    else if (num > 60) {
-        console.log('Ты точно сюда?');
-    }
-    else if (num > 60) {
-        console.log('Ты точно сюда?');
+document.querySelector('#btn-1').onclick = () => {
+    console.log(document.querySelector('#i2').value);
+    let myCheckBox = document.querySelector('#i2');
+    console.log(myCheckBox.checked);
+    if (myCheckBox.checked) {
+        console.log('Нажат');
     }
     else {
-        console.log('Ты не пройдешь!!!');
-    }
-    //сяда
-
-    switch (num) {
-        case 15:
-            console.log('Еще год потерпи!');
-            break;
-        case 16:
-            console.log('Урраааа можно!!!');
-            break;
-        default:
-            console.log('oooook');
+        console.log('Не Нажат');
     }
 }
 
-let b = 4;
-
-console.log(b == 3 || b == 7); // && - и  || или
+document.querySelector('#btn-2').onclick = (event) => {
+    event.preventDefault();
+    // let text = document.querySelector('#two');
+    // console.log(text.value);
+    // text.value = 'one';
+    let form = document.querySelector('form');
+    console.log(form);
+    console.log(form.elements.two.value);
+    console.log(form.elements.three.value);
+}
