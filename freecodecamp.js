@@ -61,6 +61,194 @@ function testGreaterThan(val = 1) {
     }
 }
 
+function caseInSwitch(val) {
+    let answer = "";
+    switch (val) {
+        case 1:
+            return 'alpha';
+            break;
+        case 2:
+            return 'beta';
+            break;
+        case 3:
+            return 'gamma';
+            break;
+        case 4:
+            return 'delta';
+            break;
+
+    }
+    return answer;
+
+    function chainToSwitch(val) {
+        let answer = "";
+        switch (val) {
+            case 'bob':
+                answer = "Marley";
+                break;
+            case 42:
+                answer = "The Answer";
+                break;
+            case 1:
+                answer = "There is no #1";
+                break;
+            case 99:
+                answer = "Missed me by this much!";
+                break;
+            case 7:
+                answer = "Ate Nine";
+                break;
+        }
+        return answer;
+    }
+    chainToSwitch(7);
+
+}
+
+function switchOfStuff(val) {
+    let answer = "";
+    switch (val) {
+        case 'a':
+            return 'apple';
+            break;
+        case 'b':
+            return 'bird';
+            break;
+        case 'c':
+            return 'cat';
+        default:
+            return 'stuff';
+            break;
+    }
+
+}
+
+function sequentialSizes(val) {
+    let answer = "";
+    switch (val) {
+        case 1:
+        case 2:
+        case 3:
+            answer = "Low";
+            break;
+        case 4:
+        case 5:
+        case 6:
+            answer = "Mid";
+            break;
+        case 7:
+        case 8:
+        case 9:
+            answer = "High";
+    }
+    return answer;
+}
+sequentialSizes(1);
+
+function isEqual(a, b) {
+    if (a === b) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function abTest(a, b) {
+    if (a < 0 || b < 0) {
+        return;
+    } else {
+        return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+    }
+}
+let count = 0;
+
+function cc(card) {
+    switch (card) {
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            count++;
+            break;
+        case 10:
+        case "J":
+        case "Q":
+        case "K":
+        case "A":
+            count--;
+            break;
+    }
+    if (count > 0) {
+        return count + " Bet";
+    } else {
+        return count + " Hold";
+    }
+}
+
+function cc(card) {
+    var regex = /[JQKA]/;
+    if (card > 1 && card < 7) {
+        count++;
+    } else if (card === 10 || regex.test(card)) {
+        count--;
+    }
+
+    if (count > 0) return count + " Bet";
+    return count + " Hold";
+}
+const myDog = {
+    name: "dog",
+    legs: 3,
+    tails: 1,
+    friends: ["water", "red"]
+}
+const testObj = {
+    "hat": "ballcap",
+    "shirt": "jersey",
+    "shoes": "cleats"
+};
+const hatValue = testObj.hat;
+const shirtValue = testObj.shirt;
+const testObj = {
+    "an entree": "hamburger",
+    "my side": "veggies",
+    "the drink": "water"
+};
+const entreeValue = testObj["an entree"];
+const drinkValue = testObj["the drink"];
+const myDog = {
+    "name": "Coder",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["freeCodeCamp Campers"]
+};
+myDog.name = 'Happy Coder';
+const myDog = {
+    "name": "Happy Coder",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["freeCodeCamp Campers"]
+};
+myDog.bark = "гав";
+const myDog = {
+    "name": "Happy Coder",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["freeCodeCamp Campers"],
+    "bark": "woof"
+};
+delete myDog.tails;
+
+
+
+abTest(2, 2);
+// аналогично:
+function isEqual(a, b) {
+    return a === b;
+}
+
+
 function testGreaterOrEqual(val = 20) {
     if (val >= 20) { // Change this line
         return "20 or Over";
