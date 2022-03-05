@@ -1,4 +1,6 @@
 // && - и  || или
+Помните, что для того, чтобы начать комментарий, вам нужно использовать,
+<!--а чтобы закончить комментарий, вам нужно использовать-->
 
 let lastNameLength = 0;
 const lastName = "Lovelace";
@@ -142,7 +144,71 @@ function sequentialSizes(val) {
             answer = "High";
     }
     return answer;
+
+    function phoneticLookup(val) {
+        let result = "";
+
+        // это эдентично коду нижнему
+        //  switch(val) {
+        //  case "alpha":
+        //  result = "Adams";
+        // break;
+        // case "bravo":
+        // result = "Boston";
+        // break;
+        // case "charlie":
+        // result = "Chicago";
+        // break;
+        // case "delta":
+        // result = "Denver";
+        //  break;
+        //  case "echo":
+        //   result = "Easy";
+        //   break;
+        // case "foxtrot":
+        //   result = "Frank";
+    }
+
+    // Only change code above this line
+    //  return result;
+    // }
+
+    phoneticLookup("charlie");
+
+    function phoneticLookup(val) {
+        var result = "";
+        var lookup = {
+            "alpha": "Adams",
+            "bravo": "Boston",
+            "charlie": "Chicago",
+            "delta": "Denver",
+            "echo": "Easy",
+            "foxtrot": "Frank"
+        };
+        result = lookup[val];
+        return result;
+    }
+    phoneticLookup("charlie");
 }
+
+function checkObj(obj, checkProp) {
+    if (obj.hasOwnProperty(checkProp)) {
+        return obj[checkProp];
+    } else {
+        return "Not Found";
+    }
+}
+//Мы можем использовать .hasOwnProperty(propname)метод объектов, чтобы определить, имеет ли этот объект заданное имя свойства. .hasOwnProperty()возвращает trueили falseесли свойство найдено или нет.
+
+Пример
+
+const myObj = {
+    top: "hat",
+    bottom: "pants"
+};
+
+myObj.hasOwnProperty("top");
+
 sequentialSizes(1);
 
 function isEqual(a, b) {
