@@ -2,81 +2,146 @@
 // При нажатии (click) на .b-1 запускайте f1, которая выводите в .out-1 число 1.
 
 function f1() {
-
+    document.querySelector('.out-1').innerHTML = 1;
 }
 
 document.querySelector('.b-1').onclick = f1;
 
 
 // Task 2
-// При нажатии (click) на .i-2 запускайте f2, которая выводите в .out-2 число 2. Т.е. как видите, мы можем повесить клик на любой элемент.
+// При нажатии (click) на .i-2 запускайте f2, которая выводите в .out-2 число 2. 
+//Т.е. как видите, мы можем повесить клик на любой элемент.
 
 function f2() {
-
+    document.querySelector('.out-2').innerHTML = 2;
 }
 
 document.querySelector('.i-2').onclick = f2;
 
 
 // Task 3
-//  При нажатии (click) на .p-3 запускайте f3, которая выводите в .out-3 число 3. Т.е. как видите, мы можем повеcить клик на любой элемент.
+//  При нажатии (click) на .p-3 запускайте f3, которая выводите в .out-3 число 3. 
+//Т.е. как видите, мы можем повеcить клик на любой элемент.
 
 function f3() {
-
+    document.querySelector('.out-3').innerHTML = 3;
 }
 
 document.querySelector('.p-3').onclick = f3;
 
 
 // Task 4. 
-// При клике по кнопке .b-4 запускается функция f4. Функция проверяет состояние .i-4 и если он checked - выводит true, если не выбран - false. Вывод везде в задачах, где не указано другое, осуществляется в div.out-номер задачи. В данном случае - div.out-4
+// При клике по кнопке .b-4 запускается функция f4. Функция проверяет состояние .i-4 и 
+//если он checked - выводит true, если не выбран - false. Вывод везде в задачах, где не 
+//указано другое, осуществляется в div.out-номер задачи. В данном случае - div.out-4
+let out4 = document.querySelector('div.out-4');
 
 function f4() {
+    let myCheckBox4 = document.querySelector('.i-4');
+    if (myCheckBox4.checked) {
+        out4.innerHTML = true;
+    } else {
+        out4.innerHTML = false;
 
+
+    }
 }
 
 document.querySelector('.b-4').onclick = f4;
 
 // Task 5.
-// При клике по кнопке .b-5 запускается функция f5. Функция проверяет состояние .i-5 и если он checked - выводит value данного элемента, если не выбран - false. Вывод везде в задачах, где не указано другое, осуществляется в div.out-номер задачи. В данном случае div.out-5
+// При клике по кнопке .b-5 запускается функция f5. Функция проверяет состояние .i-5 и 
+//если он checked - выводит value данного элемента, если не выбран - false. Вывод везде в задачах,
+// где не указано другое, осуществляется в div.out-номер задачи. В данном случае div.out-5
+let out5 = document.querySelector('div.out-5');
 
 function f5() {
+    let myCheckBox5 = document.querySelector('.i-5');
+    if (myCheckBox5.checked) {
+        out5.innerHTML = myCheckBox5.value;
+    } else {
+        out5.innerHTML = false;
 
+    }
 }
 
 document.querySelector('.b-5').onclick = f5;
 
 
 // Task 6. 
-// При нажатии на кнопку выводите value из input.i-6 в div.out-6. Обратите внимание, что даже скрытый hidden input - нам не помеха. 
+// При нажатии на кнопку выводите value из input.i-6 в div.out-6. Обратите внимание, что даже
+// скрытый hidden input - нам не помеха. 
+let out6 = document.querySelector('.out-6');
 
 function f6() {
+    let myCheckBox6 = document.querySelector('.i-6');
+
+    out6.innerHTML = myCheckBox6.value;
 
 }
 
 document.querySelector('.b-6').onclick = f6;
 
 // Task 7.
-// При нажатии на кнопку выводите в div.out-71 value прописанное в input .i-7. В .out-72 выводите 1 если длина пароля больше или равна 6 или 0 если меньше. Для подсчета количества символов в строке используйте length.
+// При нажатии на кнопку выводите в div.out-71 value прописанное в input .i-7. 
+// В .out-72 выводите 1 если длина пароля больше или равна 6 или 0 если меньше. 
+//Для подсчета количества символов в 
+//строке используйте length.
+let out71 = document.querySelector('.out-71');
+let out72 = document.querySelector('.out-72');
 
 function f7() {
+    let myCheckBox7 = document.querySelector('.i-7').value;
+    out71.innerHTML = myCheckBox7;
+    let lig = myCheckBox7.length;
+    if (lig >= 6) {
+        out72.innerHTML = 1;
+    } else {
+        out72.innerHTML = 0;
+
+    }
+
 
 }
 
 document.querySelector('.b-7').onclick = f7;
 
 // Task 8.
-// При нажатии кнопки .b-8 запускается функция f8. Функция с помощью innerHTML создает в .out-8 новый div с классом "js2" и текстом "new div". Нажали несколько раз? Создаем несколько раз!
+// При нажатии кнопки .b-8 запускается функция f8. Функция с помощью 
+//innerHTML создает в .out-8 новый div с классом "js2" и текстом "new div".
+// Нажали несколько раз? Создаем несколько раз!
+let out8 = document.querySelector('.out-8');
+
 
 function f8() {
+    let in8 = document.querySelector('.b-8');
+    if (in8.checked = 1) {
+        out8.innerHTML = '.js2';
+    } else if (in8.checked != 1) {
+        out8.innerHTML = 'new div';
+    }
+
 }
 
 document.querySelector('.b-8').onclick = f8;
 
 // Task 9
-// При нажатии кнопки .b-9 запускаем функцию f9. Функция проверяет checked элемента .r-9. Если элемент выбран (checked) то выводит в .out-9 value radiobutton. Если не выбран - выводит false.
+// При нажатии кнопки .b-9 запускаем функцию f9. Функция проверяет checked 
+//элемента .r-9. Если элемент выбран (checked) то выводит в .out-9 value 
+//radiobutton. Если не выбран - выводит false.
+let r9 = document.querySelector('.r-9').value;
+let out91 = document.querySelector('.out-9');
 
 function f9() {
+    r9 = document.querySelector('.r-9').value;
+
+    if (r9.checked) {
+        out91.innerHTML = 'radiobutton';
+    } else {
+        out91.innerHTML = false;
+
+    }
+
 
 }
 
