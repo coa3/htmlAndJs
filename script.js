@@ -1,7 +1,8 @@
 // document.querySelector('button').onclick = () => {
 //     console.log(document.querySelector('#one').value);
 //     // style
-//     document.querySelector('button').style.backgroundColor = document.querySelector('#one').value
+//     document.querySelector('button').style.backgroundColor = 
+//document.querySelector('#one').value
 // }
 
 // document.querySelector('#one').oninput = () => {
@@ -15,8 +16,7 @@ document.querySelector('#btn-1').onclick = () => {
     console.log(myCheckBox.checked);
     if (myCheckBox.checked) {
         console.log('Нажат');
-    }
-    else {
+    } else {
         console.log('Не Нажат');
     }
 }
