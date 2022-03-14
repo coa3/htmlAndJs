@@ -492,3 +492,97 @@ function isDivisible(n, x, y) {
 // Деление на ноль должно вернуть NaN.
 function remainder(n, m) {
     // Divide the larger argument by the smaller argument and return the remainder
+    let out71 = document.querySelector('.out-71');
+    let out72 = document.querySelector('.out-72');
+
+    function f7() {
+        let myCheckBox7 = document.querySelector('.i-7').value;
+        out71.innerHTML = myCheckBox7;
+        let lig = myCheckBox7.length;
+        if (lig >= 6) {
+            out72.innerHTML = 1;
+        } else {
+            out72.innerHTML = 0;
+
+        }
+
+
+    }
+    Кнопка.b - 1 запускает функцию t1.Функция должна выводить в.out - 1 строку вида:
+        //     1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_
+        // Разделитель - нижнее подчеркивание. Задача решается с помощью цикла.
+        let div = document.querySelector('.out-1');
+
+    function t1() {
+        for (let i = 1; i < 17; i++) {
+            div.innerHTML += i + "_";
+        };
+    }
+    При смене выбранного значения в s - 18, получайте из него value выбранного
+        // option и присвойте данный value в input .i-18.
+    let out18 = document.querySelector('.i-18');
+
+    function f18() {
+        let imput18 = document.querySelector('.s-18').value;
+        out18.value = imput18;
+    }
+    Кнопка.b - 2 запускает функцию t2.Функция должна выводить в.out - 2 строку вида:
+        // 12_14_16_18_20_22_24_26_28_30_32_34_36_38_
+        //Разделитель - нижнее подчеркивание. Задача решается с помощью цикла.
+        let div2 = document.querySelector('.out-2');
+    let out2 = "";
+
+    function t2() {
+        for (let i = 12; i < 39; i += 2) {
+            out2 += i + "_";
+        }
+        div2.innerHTML = out2;
+    }
+
+    document.querySelector('.b-2').onclick = t2;
+    Кнопка.b - 6 запускает функцию t6.Функция должна выводить в.out - 6 строку вида:
+        //
+        // ******<br>
+        // ******<br>
+        // ******<br>
+        //
+        //Задача решается с помощью цикла. В каждой итерации цикл выводит 6 звездочек. Перенос строки - br. Количество строк 
+        //(итераций, повторений) цикла вводит пользователь в i-6.
+        //
+        let div6 = document.querySelector('.out-6');
+
+
+    function t6() {
+        // эта строка - внутри функции обязательно
+        let out6 = "";
+        // получаем число
+        let n = +document.querySelector('.i-6').value;
+        for (let i = 0; i < n; i++) {
+            out6 += '******<br>';
+        }
+        div6.innerHTML = out6;
+
+    }
+
+    document.querySelector('.b-6').onclick = t6;
+    Task 11
+    // Кнопка .b-11 запускает функцию t11.  Функция должна:
+    //     получить все div.div-11 в переменную divs11
+    // перебрать их с помощью цикла. Обращение к div выглядит так divs[i].innerHTML
+    // вывести в .out-11 содержимое каждого блока. Разделитель - знак подчеркивания.
+    //     В результате должно получиться так:
+    //     one_3_4_two_
+    let divout11 = document.querySelector('.out-11');
+
+
+    function t11() {
+        let divs11 = '';
+        let div11 = document.querySelectorAll('.div-11');
+        for (let i = 0; i < div11.length; i++) {
+            divs11 += div11[i].innerHTML + '_';
+        }
+        divout11.innerHTML = divs11;
+
+    }
+
+    document.querySelector('.b-11').onclick = t11;
