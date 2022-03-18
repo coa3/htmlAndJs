@@ -1,33 +1,44 @@
-// document.querySelector('button').onclick = () => {
-//     console.log(document.querySelector('#one').value);
-//     // style
-//     document.querySelector('button').style.backgroundColor = 
-//document.querySelector('#one').value
+// for
+//while
+
+let div = document.querySelectorAll('.one');
+console.log(div);
+//div.style.background = 'red';
+
+// for (let i = 0; i < div.length; i = i + 1) {
+//     console.log(div[i]);
+//     div[i].style.background = 'red';
+//     div[i].onclick = two;
 // }
 
-// document.querySelector('#one').oninput = () => {
-//     console.log(document.querySelector('#one').value);
-//     document.querySelector('span').innerHTML = document.querySelector('#one').value
+// function two() {
+//     console.log('work!!!');
 // }
 
-document.querySelector('#btn-1').onclick = () => {
-    console.log(document.querySelector('#i2').value);
-    let myCheckBox = document.querySelector('#i2');
-    console.log(myCheckBox.checked);
-    if (myCheckBox.checked) {
-        console.log('Нажат');
-    } else {
-        console.log('Не Нажат');
+// let b = document.getElementsByClassName('one');
+// let c = document.getElementsByTagName('div');
+// console.log(b);
+// console.log(c);
+
+// for (let i = 0; i < b.length; i++) {
+//     b[i].style.border = '3px solid black';
+// } 
+
+document.querySelector('button').onclick = () => {
+    let r = document.querySelectorAll('input[type="radio"]');
+    console.log(r);
+    for (let i = 0; i < r.length; i++) {
+        if (r[i].checked) {
+            console.log(r[i].value);
+        }
     }
 }
 
-document.querySelector('#btn-2').onclick = (event) => {
-    event.preventDefault();
-    // let text = document.querySelector('#two');
-    // console.log(text.value);
-    // text.value = 'one';
-    let form = document.querySelector('form');
-    console.log(form);
-    console.log(form.elements.two.value);
-    console.log(form.elements.three.value);
+let out = '';
+for (let i = 0; i < 10; i++) {
+
+    if (i == 6) continue;
+    out += i + ' ';
+    // if (i == 6) break;
 }
+document.querySelector('#out').innerHTML = out;
