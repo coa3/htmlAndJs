@@ -1075,3 +1075,12 @@ function remainder(n, m) {
         } while (n !== 0)
         return arr;
     }
+    //Реализуйте функцию, которая преобразует данное логическое значение в его строковое представление.
+    function booleanToString(b) {
+        let str = String(b);
+        return str;
+    }
+
+    function booleanToString(b) {
+        return b.toString();
+    }
