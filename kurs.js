@@ -656,5 +656,61 @@ const f13 = () => {
     return y;
 }
 document.querySelector('.b-13').onclick = () => {
-    console.log(f13());
+        console.log(f13());
+    }
+    // UNIT 16. ПЕРЕБОР МАССИВОВ: FOR, FOR IN, FOR OF
+    //Функция должна превратить массив a6 в одномерный. Результат вывести в out-6 через пробел.
+let a6 = [
+    [1, 2],
+    [3, 4],
+    [5, 6]
+];
+
+function f6() {
+    let out = [];
+    for (let item of a6) {
+        for (let i = 0; i < item.length; i++) {
+            out.push(item[i]) + ' ';
+        }
+    }
+    a6 = out;
+    document.querySelector('.out-6').innerHTML = a6.join(' ');
 }
+document.querySelector('.b-6').addEventListener('click', f6);
+//Функция должна переиндексировать массив a8. Сейчас у нас обычный массив, который содержит вложенные объекты.
+// Вам необходимо сделать из a8 массив, который будет содержать только числовые id. Т.е. [23, 45].
+let a8 = [{ id: 23, name: 'Ivan' }, { id: 45, name: 'Petr' }];
+
+function f8() {
+    let out = [];
+    for (let i = 0; i < a8.length; i++) {
+        let x = a8[i];
+        let id = x.id;
+        out.push(id);
+    }
+    a8 = out;
+    return a8;
+}
+document.querySelector('.b-8').addEventListener('click', () => {
+    console.log(f8());
+});
+//Функция должна возвращать в out-9 самый большой индекс из вложенных в a9 массивов. 
+let a9 = [
+    [4, 3, 2],
+    [2, 5, 5, 8, 9, 78],
+    [0, 0, 0, 0, 0]
+];
+
+function f9() {
+    let s = a9[0];
+    for (let i = 0; i < a9.length; i++) {
+        if (a9[i].length > s.length) {
+            s = a9[i];
+        }
+    }
+    console.log(s);
+    return s.length - 1;
+}
+document.querySelector('.b-9').addEventListener('click', () => {
+    document.querySelector('.out-9').innerHTML = f9();
+});
