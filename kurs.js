@@ -6,14 +6,21 @@
 // === проверка по значению и типу, строгая проверка
 // Помните, что для того, чтобы начать комментарий, вам нужно использовать,
 //   <!--а чтобы закончить комментарий, вам нужно использовать-->
+// Ctrl+/ для однострочного комментария и что-то вроде Ctrl+Shift+/ – для многострочных комментариев (выделите кусок кода и нажмите комбинацию клавиш)
+/* Пример с двумя сообщениями.
+Это - многострочный комментарий.
+*/
 //  if (Number.isInteger(x) || x <= 0 || x >= 0) проверка на валидность число ни число....
 // второй вариант if (typeof x === 'number')
-// перевести в число
+'Interface'.toUpperCase() // перевести в верхий регистр
+'Interface'.toLowerCase() // перевести в нижний регистр
+    // перевести в число
 document.querySelector('.out-17-1').innerHTML = +a;
 document.querySelector('.out-17-2').innerHTML = parseInt(a, 10);
 document.querySelector('.out-17-3').innerHTML = Number(a);
 // exp % 1 === 0 проверка на целое число
-
+// let out = '';  =============  если ''; то out += ....... + ' '; будет выводить последовательно элементы, так 4 5 6 7
+// let out = 0;  =============  если 0; то out += ....... + ' '; будет выводить сумму элементов...
 //урок 2,3===========================================================================================
 document.getElementById('out').innerHTML = 2019; //обрашение к id элементу <div id="out">
 document.querySelector('#one').innerHTML = 777; // обрашение к id элементу <div id="out">
@@ -350,7 +357,7 @@ let d20 = [4, 5, 6, 7, 8, 9, 10];
 function f20() {
     out20.innerHTML = d20.join('');
 }
-// UNIT 12. ДВУМЕРНЫЕ МАССИВЫ
+// UNIT 12. ДВУМЕРНЫЕ МАССИВЫ==============================================================================================================================
 // выводим весь массив 123456789
 let b = [
     [1, 2, 3],
@@ -470,7 +477,7 @@ console.log(a20[1][1][1] == 9);
 console.log(a20[2][2] == 18);
 console.log(a20[3] == 12);
 console.groupEnd();
-// UNIT 13. АССОЦИАТИВНЫЙ МАССИВ
+// UNIT 13. АССОЦИАТИВНЫЙ МАССИВ=============================================================================================================
 const a = {
     "a": 5,
     "b": 'Hello',
@@ -657,60 +664,366 @@ const f13 = () => {
 }
 document.querySelector('.b-13').onclick = () => {
         console.log(f13());
-    }
-    // UNIT 16. ПЕРЕБОР МАССИВОВ: FOR, FOR IN, FOR OF
-    //Функция должна превратить массив a6 в одномерный. Результат вывести в out-6 через пробел.
-let a6 = [
-    [1, 2],
-    [3, 4],
-    [5, 6]
-];
+        // UNIT 16. ПЕРЕБОР МАССИВОВ: FOR, FOR IN, FOR OF
+        // Task 5
+        // При нажатии .b-5 выполняете функцию f5. Функция должна с помощью for of перебрать массив a5 и возвратить новый массив куда входят элементы из a5 большие 7.
+        let a5 = [3, 4, 5, 2, 1, 7, 8, 2, 4, 6, 8, 11, 23, 17];
 
-function f6() {
-    let out = [];
-    for (let item of a6) {
-        for (let i = 0; i < item.length; i++) {
-            out.push(item[i]) + ' ';
+        function f5() {
+            let out = [];
+            for (let item of a5) {
+                if (item > 7) {
+                    out.push(item);
+                }
+            }
+            return out;
         }
-    }
-    a6 = out;
-    document.querySelector('.out-6').innerHTML = a6.join(' ');
-}
-document.querySelector('.b-6').addEventListener('click', f6);
-//Функция должна переиндексировать массив a8. Сейчас у нас обычный массив, который содержит вложенные объекты.
-// Вам необходимо сделать из a8 массив, который будет содержать только числовые id. Т.е. [23, 45].
-let a8 = [{ id: 23, name: 'Ivan' }, { id: 45, name: 'Petr' }];
+        document.querySelector('.b-5').addEventListener('click', () => {
+            document.querySelector('.out-5').innerHTML = f5();
+        });
+        // Функция должна превратить массив a6 в одномерный. Результат вывести в out-6 через пробел.
+        let a6 = [
+            [1, 2],
+            [3, 4],
+            [5, 6]
+        ];
 
-function f8() {
-    let out = [];
-    for (let i = 0; i < a8.length; i++) {
-        let x = a8[i];
-        let id = x.id;
-        out.push(id);
-    }
-    a8 = out;
-    return a8;
-}
-document.querySelector('.b-8').addEventListener('click', () => {
-    console.log(f8());
-});
-//Функция должна возвращать в out-9 самый большой индекс из вложенных в a9 массивов. 
-let a9 = [
-    [4, 3, 2],
-    [2, 5, 5, 8, 9, 78],
-    [0, 0, 0, 0, 0]
-];
-
-function f9() {
-    let s = a9[0];
-    for (let i = 0; i < a9.length; i++) {
-        if (a9[i].length > s.length) {
-            s = a9[i];
+        function f6() {
+            let out = [];
+            for (let item of a6) {
+                for (let i = 0; i < item.length; i++) {
+                    out.push(item[i]) + ' ';
+                }
+            }
+            a6 = out;
+            document.querySelector('.out-6').innerHTML = a6.join(' ');
         }
-    }
-    console.log(s);
-    return s.length - 1;
+        document.querySelector('.b-6').addEventListener('click', f6);
+        // Функция должна переиндексировать массив a7. Что имеется ввиду. Сейчас у нас обычный массив, который содержит вложенные 
+        //объекты. Вам необходимо сделать из a7 объект, где ключи - значения id из вложенных массивов, а значения - имя (т.е { 23 : Ivan, 45 : Petr}. Функция должна возвращать
+        // результирующий массив.
+        let a7 = [{ id: 23, name: 'Ivan' }, { id: 45, name: 'Petr' }];
+
+        function f7() {
+            let out = {};
+            for (let i = 0; i < a7.length; i++) {
+                let x = a7[i];
+                let id = x.id;
+                let name = x.name;
+                out[id] = name;
+            }
+            a7 = out;
+            return a7;
+        }
+        document.querySelector('.b-7').addEventListener('click', () => {
+            console.log(f7());
+        });
+        //При нажатии .b-8 выполняете функцию f8. Функция должна переиндексировать массив a8. Что имеется ввиду. Сейчас у нас обычный массив, который содержит вложенные объекты.
+        // Вам необходимо сделать из a8 массив, который будет содержать только числовые id. Т.е. [23, 45]. Функция должна возвращать результирующий массив.
+        let a8 = [{ id: 23, name: 'Ivan' }, { id: 45, name: 'Petr' }];
+
+        function f8() {
+            let out = [];
+            for (let i = 0; i < a8.length; i++) {
+                let x = a8[i];
+                let id = x.id;
+                out.push(id);
+            }
+            a8 = out;
+            return a8;
+        }
+        document.querySelector('.b-8').addEventListener('click', () => {
+            console.log(f8());
+        });
+        // Функция должна возвращать в out-9 самый большой индекс из вложенных в a9 массивов. В данном случае это 4. Т.е. самый 
+        // большой вложенный массив это [0,0,0,0,0], а в нем самый большой индекс 4.
+        let a9 = [
+            [4, 3, 2],
+            [2, 5, 5, 8, 9, 78],
+            [0, 0, 0, 0, 0]
+        ];
+
+        function f9() {
+            let s = a9[0];
+            for (let i = 0; i < a9.length; i++) {
+                if (a9[i].length > s.length) {
+                    s = a9[i];
+                }
+            }
+            console.log(s);
+            return s.length - 1;
+        }
+        document.querySelector('.b-9').addEventListener('click', () => {
+            document.querySelector('.out-9').innerHTML = f9();
+        });
+        // Функция должна преобразовывать массив a10 в ассоциативный массив вида {4: 4, 6: 6, 9: 9, hello : "hello"}
+        let a10 = [4, 6, 9, 'Hello'];
+
+        function f10() {
+            let out = {};
+            for (let key in a10) {
+                out[a10[key]] = a10[key];
+            }
+            return out;
+        }
+        document.querySelector('.b-10').addEventListener('click', () => {
+            console.log(f10());
+        });
+        //При нажатии .b-11 выполняете функцию f11. Функция должна c помощью for in перебрать объект a11 и вывести в out-11 только те значения, которые больше 10. Вывод - через
+        let a11 = {
+            one: 11,
+            two: 7,
+            three: 13,
+            four: 0
+        }
+
+        function f11() {
+            let out = '';
+            for (let key in a11) {
+                if (a11[key] > 10) {
+                    out += a11[key] + ' ';
+                }
+            }
+            document.querySelector('.out-11').innerHTML = out;
+        }
+        document.querySelector('.b-11').addEventListener('click', f11);
+        // UNIT 17. МЕТОДЫ МАССИВОВ: MAP, FILTER ======================================================================
+        // Array.isArray() возвращает true, если объект является массивом и false, если он массивом не является.
+        // forEach перебирает каждый элемент вместо цикла
+        // filter() создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в функции.
+        // includes() определяет, содержит ли массив определённый элемент, возвращая в зависимости от этого true или false.
+
+        // с помощью map переберите массив и создайте новый массив a1_res куда добавьте элементы данного массива умноженные на 2. Возвратите массив  a1_res. */
+        let a1 = [4, 5, 6, 7, 12, 34, 56, 78, 90, 11];
+
+        function t1() {
+            a1_res = a1.map(elem => {
+                return elem * 2;
+            });
+            return a1_res;
+        }
+        document.querySelector('.b-1').onclick = () => {
+                console.log(t1());
+            }
+            /*  C помощью map переберите массив a7 и создайте  a7_res, который содержит элементы массива a7 приведенные к нижнему регистру. Функция должна возвращать a7_res. */
+        let a_7 = ['Alto`s Adventure', 'Angry Birds 2', 'Anno 2205', 'Assassin`s Creed Chronicles'];
+
+        function t7() {
+            a7_res = a_7.map(elem => {
+                return elem.toLowerCase();
+            });
+            return a7_res;
+        }
+        document.querySelector('.b-7').onclick = () => {
+                console.log(t7());
+            }
+            /*  С помощью forEach, переберите массив a9 и преобразуйте все записи в массиве в нижний регистр. Функция должна возвращать a9. */
+        let a_9 = ['Quantum Break', 'Gears of War 4', 'Mass Effect: Andromeda', 'Far Cry Primal'];
+
+        function t9() {
+            let t = [];
+            a9.forEach(elem => { // forEach перебирает каждый элемент вместо цикла
+                let b = elem.toLowerCase();
+                t.push(b);
+            });
+            a_9 = t;
+            return a_9;
+        }
+        document.querySelector('.b-9').onclick = () => {
+                console.log(t9());
+            }
+            /*  С помощью filter, переберите массив a11 и создайте новый массив a11_res куда добавьте только те элементы массива ИНДЕКС которых - четный. Возвратите a11_res.*/
+        let a_11 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
+
+        function t11() {
+            a11_res = a_11.filter(function(item, index) { // filter() создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в функции.
+                if (index % 2 === 0) {
+                    return true;
+                }
+            });
+            return a11_res;
+        }
+        document.querySelector('.b-11').onclick = () => {
+                console.log(t11());
+            }
+            /*  С помощью метода includes функция t14 должна определить, есть ли значение из переменной a14_sym в массиве. 
+            Если да - то функция возврaщает true, если нет false. Обратите внимание, функция должна искать независимо от регистра. Т.е. если в a14_sym будет строка 'd' 
+            то возвратить true, однако и на строку 'D' тоже возвратить true. */
+        let a14 = ['c', 'C', 'd', 'e', 'E'];
+        let a14_sym = 'd';
+
+        function t14() {
+            let a = a14_sym.toLowerCase()
+            if (a14.includes(a14_sym) || a14.includes(a)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        document.querySelector('.b-14').onclick = () => {
+                console.log(t14());
+            }
+            /* С помощью метода filter функция t15 должна создать на его основе массив a15_res содержащий записи только тех пользователей, номер паспорта (pnum) 
+            которых не пустая строка и длина номера - 6 символов.*/
+        let a15 = [{
+                "name": "ivanov",
+                "pnum": 'tr7862'
+            },
+            {
+                "name": "petrov",
+                "pnum": ''
+            },
+            {
+                "name": "sedanov",
+                "pnum": 'im7961'
+            },
+            {
+                "name": "dou",
+                "pnum": 'tr786259'
+            },
+        ];
+
+        function t15() {
+            a15_res = a15.filter(function(item, index) {
+                if (item.pnum.length == 6) {
+                    return true;
+                }
+            });
+            return a15_res;
+        }
+        document.querySelector('.b-15').onclick = () => {
+                console.log(t15());
+            }
+            // UNIT 18. МЕТОДЫ МАССИВОВ: JOIN, SPLIT, FOREACH ======================================================================================================
+            // split(); разбивает объект String на массив строк путём разделения строки указанной подстрокой.
+            // join() объединяет все элементы массива  в строку
+
+        /*  переберите массив и создайте новый массив a3_res куда добавьте элементы данного массива являющиеся числом. .*/
+        function t3() {
+            let a3 = [2, 'hello', 3, 'hi', 4, 'Mazai'];
+            let out = a3.forEach(elem => {
+                if (elem === Number(elem))
+                    a3_res.push(elem);
+            });
+            document.querySelector('.out-3').innerHTML = a3_res;
+        }
+        document.querySelector('.b-3').onclick = t3;
+        /*  На странице созданы 3 p.task-5 c атрибутом data. С помощью forEach переберите их и добавьте событие клик.  и добавлять атрибут data элемента,
+         по которому кликнули в массив a5_res.*/
+        function t5() {
+            a5_res.push(this.getAttribute('data'));
+            console.log(a5_res);
+        }
+        document.querySelectorAll('.task-5').forEach(elem => {
+            elem.onclick = t5;
+        });
+        /*  Дана строка str6='helloworld' - преобразуйте ее в массив и присвойте a6_res. */
+        function t6() {
+            let str6 = 'helloworld';
+            a6_res = str6.split(); // разбивает объект String на массив строк путём разделения строки указанной подстрокой.
+            document.querySelector('.out-6').innerHTML = a6_res;
+            console.log(a6_res);
+        }
+        document.querySelector('.b-6').onclick = t6;
+        /*  Дан массив a8 = [1,2,66,77,15] - преобразуйте ее в строку. Разделитель - дефис. */
+        function t8() {
+            let a8 = [1, 2, 66, 77, 15];
+            a8_res = a8.join('-'); // join() объединяет все элементы массива в строку
+            document.querySelector('.out-8').innerHTML = a8_res;
+            console.log(a8_res);
+        }
+        document.querySelector('.b-8').onclick = t8;
+        // UNIT 19. СОБЫТИЯ МЫШИ В JAVASCRIPT ==============================================================================
+        document.querySelector('.two').onclick = function() {
+            console.log('click2');
+        }
+        document.querySelector('.two').ondblclick = () => {
+            console.log('double');
+        }
+        document.querySelector('.two').oncontextmenu = () => {
+                console.log('right button');
+                return false;
+            }
+            // let w = 75;
+            // document.querySelector('.three').onmousemove = () => {
+            //     document.querySelector('.three').style.width = w + 'px';
+            //     w++;
+            // }
+        document.querySelector('.three').onmouseenter = () => {
+            document.querySelector('.three').style.background = 'red';
+            console.log(1);
+        }
+        document.querySelector('.three').onmouseleave = () => {
+            document.querySelector('.three').style.background = 'green';
+            console.log(2);
+        }
+        document.querySelector('.three').onmousedown = () => {
+            document.querySelector('.three').style.background = 'orange';
+            console.log(2);
+        }
+        document.querySelector('.three').onmouseup = () => {
+            document.querySelector('.three').style.background = 'blue';
+            console.log(2);
+        }
+        let p = 10;
+        document.querySelector('button').onclick = function(e) {
+            p++;
+            document.querySelector('progress').value = p;
+        }
+
+
+
+
+    } // 20.   UNIT 20. СОБЫТИЯ КЛАВИАТУРЫ               ==================================================
+document.querySelector('.i-1').onkeypress = function(event) { // для букв и некоторых вспомогательных клавиш срабатывает при 
+    console.log('keypress'); // НАЖАТИИ И ОТПУСКАНИИ клавиши
+    console.log('charCode: ' + event.charCode); //q 113 Q 81
+    console.log('code: ' + event.code);
+    console.log('key: ' + event.key);
+    console.log('keyCode: ' + event.keyCode);
 }
-document.querySelector('.b-9').addEventListener('click', () => {
-    document.querySelector('.out-9').innerHTML = f9();
-});
+
+document.querySelector('.i-1').onkeydown = function(event) { // клавиша нажата но еще не отпущена, допустим нажимая стрелочки работать  
+    console.log('keydown'); // будет только это событие
+    console.log('charCode: ' + event.charCode); //q 113 Q 81
+    console.log('code: ' + event.code);
+    console.log('key: ' + event.key);
+    console.log('keyCode: ' + event.keyCode);
+    if (event.key == 'CapsLock') {
+        document.querySelector('.ch-1').checked = true;
+    } else {
+        document.querySelector('.ch-1').checked = false;
+    }
+}
+
+document.querySelector('.i-1').onkeyup = function(event) { // срабатывает когда клавишу отпускаешь
+    console.log('keyup');
+    console.log('charCode: ' + event.charCode); //q 113 Q 81
+    console.log('code: ' + event.code);
+    console.log('key: ' + event.key);
+    console.log('keyCode: ' + event.keyCode);
+}
+
+document.querySelector('.i-2').onkeypress = function(event) {
+    console.log('keypress');
+    console.log('charCode: ' + event.charCode); //q 113 Q 81
+    console.log('code: ' + event.code);
+    console.log('key: ' + event.key);
+    console.log('keyCode: ' + event.keyCode);
+    const a = {
+        q: 'w',
+        w: 'e'
+    }
+    document.querySelector('.i-2').value += a[event.key];
+    return false;
+}
+
+/* Дан input .i-9. Напишите функцию t9, выводит в .out-9 количество (число) нажатых клавиш стрелка вниз. */
+let out9_1 = 1; // если out9_1  оставить внутри функции, то прибавления не будет!!!!!!!!!!!!!!!!!!!!!!
+function t9(event) {
+    if (event.keyCode === 40) {
+        out9_1++
+    }
+    document.querySelector('.out-9').innerHTML = out9_1;
+}
+document.querySelector('.i-9').onkeydown = t9;
