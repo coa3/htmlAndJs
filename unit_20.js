@@ -70,24 +70,35 @@ document.querySelector('.i-5').onkeydown = t5;
 /*  Дан input .i-6. Напишите функцию t6, которая позволяет вводить в i-6 только символы в нижнем регистре. Т.е. мы до функции создаем
  строку. Внутри функции проверяем код символа. Если символ - в нижнем регистре - добавляем в строку. Потом принудительно присваиваем строку в 
  value input i-6. Чтобы блокировать стандартный вывод в input в конце функции пишем return false;  */
+let string6 = '';
 
 function t6(event) {
     console.log(event);
 
     if (event.keyCode > 96 && event.keyCode < 123) {
-        document.querySelector('.i-6').value += event.keyCode;
-    } else { return false; }
+        string6 = event.key;
+        document.querySelector('.i-6').value += string6;
+    }
+    if (event.keyCode > 47 && event.keyCode < 58) {
+        string6 = event.key;
+        document.querySelector('.i-6').value += string6;
+    }
+    return false;
 }
 
 document.querySelector('.i-6').onkeypress = t6;
 
 
-// Task 7 ============================================
+// Task 7 ============================================ 
 /*  Дан input .i-7. Напишите функцию t7, которая выводит в .out-7 случаный символ из массива a7 при каждом вводе символа. */
 
 const a7 = ['a', 'z', 'x', 'w', 'y', 't'];
 
 function t7() {
+    let min = 0;
+    let max = a7.length - 1;
+    let q = Math.floor(Math.random() * (max - min + 1)) + min;
+    document.querySelector('.out-7').innerHTML += a7[q];
 
 }
 
@@ -103,21 +114,27 @@ const a8 = {
 }
 
 function t8(event) {
-    // 1. Получаем из event введенный символ
-    // 2. Проверяем наличие такого ключа в a8 - уже делали это раньше!!!!
-    // 3. Если есть дописываем в out-8 символ из массива a8. Если нет - введенный символ.
-}
+    let inp = event.key;
+    if (a8[inp] !== undefined) {
+        document.querySelector('.out-8').innerHTML = a8[inp];
+    } else {
+        document.querySelector('.out-8').innerHTML = inp;
 
+    }
+}
 document.querySelector('.i-8').onkeydown = t8;
 
 
 // Task 9 ============================================
 /* Дан input .i-9. Напишите функцию t9, выводит в .out-9 количество (число) нажатых клавиш стрелка вниз. */
+let out = 1;
 
 function t9(event) {
-    console.log(event);
+ if (event.keyCode === 40) {
+        out++
+    }
+    document.querySelector('.out-9').innerHTML = out;
 }
-
 document.querySelector('.i-9').onkeydown = t9;
 
 
