@@ -933,48 +933,141 @@ document.querySelector('.b-13').onclick = () => {
             console.log(a8_res);
         }
         document.querySelector('.b-8').onclick = t8;
+
         // UNIT 19. СОБЫТИЯ МЫШИ В JAVASCRIPT ==============================================================================
-        document.querySelector('.two').onclick = function() {
+        document.querySelector('.two').onclick = function() { // одинарныйф клик
             console.log('click2');
         }
-        document.querySelector('.two').ondblclick = () => {
+        document.querySelector('.two').ondblclick = () => { // двойной клик
             console.log('double');
         }
-        document.querySelector('.two').oncontextmenu = () => {
+        document.querySelector('.two').oncontextmenu = () => { // правой кнопкой мышки вывод меню
                 console.log('right button');
                 return false;
             }
             // let w = 75;
-            // document.querySelector('.three').onmousemove = () => {
+            // document.querySelector('.three').onmousemove = () => {  // при движении внутри объекта мышкой, увеличивается на +75px объект при каждом движении
             //     document.querySelector('.three').style.width = w + 'px';
             //     w++;
             // }
-        document.querySelector('.three').onmouseenter = () => {
+        document.querySelector('.three').onmouseenter = () => { // при наведении мышки на объект, он становится красным
             document.querySelector('.three').style.background = 'red';
             console.log(1);
         }
-        document.querySelector('.three').onmouseleave = () => {
+        document.querySelector('.three').onmouseleave = () => { // при выведении мышки из границ объекта он становится зеленым
             document.querySelector('.three').style.background = 'green';
             console.log(2);
         }
-        document.querySelector('.three').onmousedown = () => {
+        document.querySelector('.three').onmousedown = () => { // при нажатии и УДЕРЖАНИИ кнопки мыши, объект становится оранжевым
             document.querySelector('.three').style.background = 'orange';
             console.log(2);
         }
-        document.querySelector('.three').onmouseup = () => {
+        document.querySelector('.three').onmouseup = () => { // при отпускании кнопки мыши на объекте, он становится голубым
             document.querySelector('.three').style.background = 'blue';
             console.log(2);
         }
         let p = 10;
         document.querySelector('button').onclick = function(e) {
-            p++;
-            document.querySelector('progress').value = p;
+                p++;
+                document.querySelector('progress').value = p;
+            }
+            /* Функция должна возвращать и выводить на экран содержимое блока (только текст). */
+        let p1 = document.querySelector('.div-1');
+
+        function t1() {
+            document.querySelector('.out-1').innerHTML = p1.innerHTML;
+            return p1.innerHTML;
+        }
+        document.querySelector('.div-1').onclick = t1;
+        /*  Функция должна возвращать true или false в зависимости от того, нажата ли клавиша alt или нет в момент клика. */
+        let p2 = document.querySelector('.div-2');
+
+        function t2(event) {
+            p2.innerHTML = event.altKey;
+            return event.altKey;
+        }
+        document.querySelector('.div-2').onclick = t2;
+        /*  При клике - увеличивайте ширину блока на 5px. Каждый клик - увеличение ширины на 5px. 10 кликов - на 50px. */
+        let out3 = document.querySelector('.out-3');
+        let w3 = 75;
+
+        function t3() {
+            document.querySelector('.div-3').style.width = w3 + 'px';
+            w3 += 5;
+            out3.innerHTML = w3;
+        }
+        document.querySelector('.div-3').onclick = t3;
+        /*  Добавьте на него событие двойной клик, по которому удалется класс active если он есть и добавляется если такого класса нет. */
+        let out5 = document.querySelector('.div-5');
+
+        function t5() {
+            out5.classList.toggle('active'); //  Если класс у элемента отсутствует - добавляет, иначе - убирает. 
+        }
+        document.querySelector('.div-5').ondblclick = t5;
+        /*  Повесьте на него событие onchange при котором на документе отключается клик правой кнопкой мыши если checkbox выбран и отключает если не выбран. */
+        let out8 = document.querySelector('.ch-8');
+
+        function t8() {
+            if (out8.checked) {
+                document.oncontextmenu = function(event) { return false; }
+            } else {
+                document.oncontextmenu = null;
+            }
+        }
+        document.querySelector('.ch-8').onchange = t8;
+        /*  При наведении мыши (mouseenter)  - меняйте изображение на 2.png. При уведении мыши -mouseleave - возвращайте исходное изображение. */
+        function t11() {
+            document.querySelector('.div-11 img').src = 'img/2.png';
         }
 
+        function t111() {
+            document.querySelector('.div-11 img').src = 'img/1.png';
+        }
+        document.querySelector('.div-11').onmouseenter = t11;
+        document.querySelector('.div-11').onmouseleave = t111;
+        /*  при нажатии кнопки мыши - добавляйте ему класс active. Добавьте ему событие mouseup - при отпускании мыши - удаляйте класс active. */
+        let out13 = document.querySelector('.div-13');
+        out13.onmousedown = () => {
+            out13.classList.add('active'); //  add Добавляет элементу указанные классы
+        }
+        out13.onmouseup = () => {
+            out13.classList.remove('active'); // remove удаляет указанные классы
+        }
 
+        /*  Дано две кнопки - b-17_on и b-17_off. Напишите фукнции t17On и t17Off которые включают и отключают событие move в задании 16. */
+        function t17On() {
+            out57.onmousemove = t16;
+        }
 
+        function t17Off() {
+            out58.onmousemove = function(event) { return false; }
+        }
+        document.querySelector('.b-17_on').onclick = t17On;
+        document.querySelector('.b-17_off').onclick = t17Off;
+        /*  Напишите фукнцию t18 которая выводит в данный блок его ширину при событии onmouseenter. */
+        let out18 = document.querySelector('.div-18');
 
-    } // 20.   UNIT 20. СОБЫТИЯ КЛАВИАТУРЫ               ==================================================
+        function t18() {
+            out18.innerHTML = document.querySelector('.div-18').offsetWidth; // возвращает ширину элемента. 
+        }
+        document.querySelector('.div-18').onmouseenter = t18;
+        /*  Напишите фукнцию t19 которая выводит в данный блок его классы при событии onmouseout. */
+        let out19 = document.querySelector('.div-19');
+
+        function t19() {
+            out19.innerHTML = out19.classList; // classList возвращает псевдомассив, содержащий все классы элемента.
+        }
+        document.querySelector('.div-19').onmouseout = t19;
+        /*  Дан элемент progress. Напишите фукнцию t20 которая увеличивает его value на 1 при каждом событии mousemove внутри progress. */
+        let p20 = 0;
+
+        function t20() {
+            document.querySelector('progress').value = p20;
+            p20++;
+        }
+        document.querySelector('progress').onmousemove = t20;
+    }
+    // 20.   UNIT 20. СОБЫТИЯ КЛАВИАТУРЫ  ====================================================================================================================
 document.querySelector('.i-1').onkeypress = function(event) { // для букв и некоторых вспомогательных клавиш срабатывает при 
     console.log('keypress'); // НАЖАТИИ И ОТПУСКАНИИ клавиши
     console.log('charCode: ' + event.charCode); //q 113 Q 81
