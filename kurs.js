@@ -57,6 +57,37 @@ document.querySelector('#btn-2').onclick = (event) => {
         console.log(form);
         console.log(form.elements.two.value);
         console.log(form.elements.three.value);
+
+        /*   2 Основы ввода данных(update 2021 - 05 - 12)
+           3 Оператор If, else, switch case 
+           4 Работаем с формами: input, range, textarea
+           5 Циклы в JavaScript(часть 1)
+           6 Вложенные циклы в JavaScript(часть 2)
+           7 Функции и все о них
+           8 Цикл While, Do While
+           9 Работаем с DOM
+           10 Массивы в JavaScript
+           11 Добавление и удаление элементов в массиве, pop, push, splice
+           12 Двумерные массивы
+           13 Ассоциативный массив(объект) в JavaScript +
+           14 Практика по массивам - получаем прогноз погоды по API +
+           15 Set в JavaScript
+           16 Перебор массивов: for, for in, for of 
+           17 Методы массивов: map, filter(часть 1) 
+           18 Методы массивов: join, split, forEach(часть 2)
+           19 События мыши в JavaScript
+           20 События клавиатуры в JavaScript
+           21 Краткий обзор touch событий
+           22 Обрабатываем ошибки с помощью Try Catch
+           23 LocalStorage.Сохраняем все +
+           24 Немного теории - работа с POST, GET запросами +
+           25 AJAX - асинхронный JavaScript +
+           26 Учим FETCH на практике
+           27 Работаем с промисами(Promise) +
+           28 ООП в ES6
+           29 Бонусы - замыкания +
+           30 Бонус - Рекурсия
+           */
     }
     // урок 5 ЦИКЛЫ В JAVASCRIPT =======================================================================================
 document.querySelector('button').onclick = () => {
@@ -1098,21 +1129,53 @@ document.querySelector('.i-1').onkeyup = function(event) { // срабатыва
 }
 
 document.querySelector('.i-2').onkeypress = function(event) {
-    console.log('keypress');
-    console.log('charCode: ' + event.charCode); //q 113 Q 81
-    console.log('code: ' + event.code);
-    console.log('key: ' + event.key);
-    console.log('keyCode: ' + event.keyCode);
-    const a = {
-        q: 'w',
-        w: 'e'
+        console.log('keypress');
+        console.log('charCode: ' + event.charCode); //q 113 Q 81
+        console.log('code: ' + event.code);
+        console.log('key: ' + event.key);
+        console.log('keyCode: ' + event.keyCode);
+        const a = {
+            q: 'w',
+            w: 'e'
+        }
+        document.querySelector('.i-2').value += a[event.key];
+        return false;
     }
-    document.querySelector('.i-2').value += a[event.key];
+    /* только символы в нижнем регистре. Т.е. ввели ab4Bci в out-4 получаем ab4ci. */
+function t4(event) {
+    document.querySelector('.out-4').innerHTML += event.key.toLowerCase();
+}
+/*  только символы в нижнем регистре. */
+let string6 = '';
+
+function t6(event) {
+    if (event.keyCode > 96 && event.keyCode < 123) {
+        string6 = event.key;
+        document.querySelector('.i-6').value += string6;
+    }
+    if (event.keyCode > 47 && event.keyCode < 58) {
+        string6 = event.key;
+        document.querySelector('.i-6').value += string6;
+    }
     return false;
 }
 
-/* Дан input .i-9. Напишите функцию t9, выводит в .out-9 количество (число) нажатых клавиш стрелка вниз. */
-let out9_1 = 1; // если out9_1  оставить внутри функции, то прибавления не будет!!!!!!!!!!!!!!!!!!!!!!
+
+document.querySelector('.i-6').onkeypress = t6;
+
+/*  выводит в .out-7 случаный символ из массива a7 при каждом вводе символа. */
+const a8 = ['a', 'z', 'x', 'w', 'y', 't'];
+
+function t7() {
+    let min = 0;
+    let max = a8.length - 1;
+    let q = Math.floor(Math.random() * (max - min + 1)) + min;
+    document.querySelector('.out-7').innerHTML += a8[q];
+}
+document.querySelector('.i-7').onkeydown = t7;
+
+/* количество (число) нажатых клавиш стрелка вниз. */
+let out9_1 = 0; // если out9_1  оставить внутри функции, то прибавления не будет!!!!!!!!!!!!!!!!!!!!!!
 function t9(event) {
     if (event.keyCode === 40) {
         out9_1++

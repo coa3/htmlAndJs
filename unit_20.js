@@ -21,7 +21,7 @@ function t2(event) {
 document.querySelector('.i-2').onkeypress = t2;
 
 // Task 3 ============================================
-/*  Дан input .i-3. Напишите функцию t3, которая выводит на страницу true если введен символ и false если цифра. Для определения -
+/* Дан input .i-3. Напишите функцию t3, которая выводит на страницу true если введен символ и false если цифра. Для определения -
  используйте keyCode. */
 
 
@@ -42,13 +42,7 @@ document.querySelector('.i-3').onkeypress = t3;
  ab4ci. */
 
 function t4(event) {
-    console.log(event);
-    console.log(event.keyCode);
-    //if (event.keyCode > 96 && event.keyCode < 123) {
     document.querySelector('.out-4').innerHTML += event.key.toLowerCase();
-
-    // }
-
 }
 
 document.querySelector('.i-4').onkeypress = t4;
@@ -58,8 +52,7 @@ document.querySelector('.i-4').onkeypress = t4;
 и функция выведет ABCD. */
 
 function t5(event) {
-    console.log(event);
-    console.log(event.keyCode);
+
     document.querySelector('.out-5').innerHTML += event.key.toUpperCase();
 
 }
@@ -127,10 +120,10 @@ document.querySelector('.i-8').onkeydown = t8;
 
 // Task 9 ============================================
 /* Дан input .i-9. Напишите функцию t9, выводит в .out-9 количество (число) нажатых клавиш стрелка вниз. */
-let out = 1;
+let out = 0;
 
 function t9(event) {
- if (event.keyCode === 40) {
+    if (event.keyCode === 40) {
         out++
     }
     document.querySelector('.out-9').innerHTML = out;
@@ -139,21 +132,31 @@ document.querySelector('.i-9').onkeydown = t9;
 
 
 // Task 10 ============================================
-/*  Дан input .i-10 и блок .block-10. Добавьте событие на input, при нажатии клавиш стрелка вправо и стрелка влево увеличивать ширину блока.
+/* Дан input .i-10 и блок .block-10. Добавьте событие на input, при нажатии клавиш стрелка вправо и стрелка влево увеличивать ширину блока.
  Клавиши стрелка вверх и вниз - увеличивать высоту блока. Одно нажатие клавиши - 1px. */
-
+let outblok = document.querySelector('.block-10');
 let h = 75;
 let w = 75;
 
 function t10(event) {
-    // увеличиваем  h, w, потом присваиваем как свойства...
 
+    // увеличиваем h, w, потом присваиваем как свойства...
+    console.log(event);
+    if (event.keyCode == 39 || event.keyCode == 37) {
+        outblok.style.width = w + 'px';
+        w++;
+    }
+    if (event.keyCode == 40 || event.keyCode == 38) {
+        outblok.style.height = h + 'px';
+        h++;
+    }
 }
+
 
 document.querySelector('.i-10').onkeydown = t10;
 
 // Task 11 ============================================
-/*  Проект. 
+/* Проект. 
 1. Изучите верстку клавиатуры.
 2. При вводе символа в i-11 ( латиница, нижний регистр) - клавише с таким символом присвойте класс .active. Это окрасит клавишу оранжевым 
 фоном. Перед поиском и присвоением active, с помощью цикла удалите класс active у всех клавиш с классом keyboard.
@@ -162,8 +165,15 @@ document.querySelector('.i-10').onkeydown = t10;
 5. Самостоятельно добавьте клавишу alt, enter.
 */
 
+let out11 = document.querySelectorAll('.out-11')
+
 function t11(event) {
-    console.log(event.key);
+
+    console.log(event);
+
+    if (event.key == out11)
+
+        out11.classList.toggle('active');
 
 }
 
