@@ -164,17 +164,21 @@ document.querySelector('.i-10').onkeydown = t10;
 4. Самостоятельно добавьте все цифры и второй ряд клавиш от a до l
 5. Самостоятельно добавьте клавишу alt, enter.
 */
-
-let out11 = document.querySelectorAll('.out-11')
+let keyboards = document.querySelectorAll('.keyboard');
+let out11 = document.querySelectorAll('.out-11');
 
 function t11(event) {
-
     console.log(event);
+    let int = document.querySelector('.i-11').value;
 
-    if (event.key == out11)
+    console.log(int);
+    for (let i = 0; i < keyboards.length; i++) {
+        keyboards[i].classList.remove('.active');
+        console.log(event.key);
+        // if (int == event.key)
 
-        out11.classList.toggle('active');
-
+        keyboards[int].classList.toggle('active');
+    }
 }
 
 document.querySelector('.i-11').onkeydown = t11;
