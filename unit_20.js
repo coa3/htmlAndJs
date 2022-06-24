@@ -21,7 +21,7 @@ function t2(event) {
 document.querySelector('.i-2').onkeypress = t2;
 
 // Task 3 ============================================
-/* Дан input .i-3. Напишите функцию t3, которая выводит на страницу true если введен символ и false если цифра. Для определения -
+/*  Дан input .i-3. Напишите функцию t3, которая выводит на страницу true если введен символ и false если цифра. Для определения -
  используйте keyCode. */
 
 
@@ -42,7 +42,13 @@ document.querySelector('.i-3').onkeypress = t3;
  ab4ci. */
 
 function t4(event) {
+    console.log(event);
+    console.log(event.keyCode);
+    //if (event.keyCode > 96 && event.keyCode < 123) {
     document.querySelector('.out-4').innerHTML += event.key.toLowerCase();
+
+    // }
+
 }
 
 document.querySelector('.i-4').onkeypress = t4;
@@ -52,7 +58,8 @@ document.querySelector('.i-4').onkeypress = t4;
 и функция выведет ABCD. */
 
 function t5(event) {
-
+    console.log(event);
+    console.log(event.keyCode);
     document.querySelector('.out-5').innerHTML += event.key.toUpperCase();
 
 }
@@ -132,7 +139,7 @@ document.querySelector('.i-9').onkeydown = t9;
 
 
 // Task 10 ============================================
-/* Дан input .i-10 и блок .block-10. Добавьте событие на input, при нажатии клавиш стрелка вправо и стрелка влево увеличивать ширину блока.
+/*  Дан input .i-10 и блок .block-10. Добавьте событие на input, при нажатии клавиш стрелка вправо и стрелка влево увеличивать ширину блока.
  Клавиши стрелка вверх и вниз - увеличивать высоту блока. Одно нажатие клавиши - 1px. */
 let outblok = document.querySelector('.block-10');
 let h = 75;
@@ -156,7 +163,7 @@ function t10(event) {
 document.querySelector('.i-10').onkeydown = t10;
 
 // Task 11 ============================================
-/* Проект. 
+/*  Проект. 
 1. Изучите верстку клавиатуры.
 2. При вводе символа в i-11 ( латиница, нижний регистр) - клавише с таким символом присвойте класс .active. Это окрасит клавишу оранжевым 
 фоном. Перед поиском и присвоением active, с помощью цикла удалите класс active у всех клавиш с классом keyboard.
@@ -164,21 +171,28 @@ document.querySelector('.i-10').onkeydown = t10;
 4. Самостоятельно добавьте все цифры и второй ряд клавиш от a до l
 5. Самостоятельно добавьте клавишу alt, enter.
 */
-let keyboards = document.querySelectorAll('.keyboard');
-let out11 = document.querySelectorAll('.out-11');
+const keyboard = document.querySelectorAll('.keyboard');
+const s = {
+    "Control": "ctrl",
+    "Enter": "enter",
+    " ": "space",
+    "Alt": "alt",
+}
 
 function t11(event) {
-    console.log(event);
-    let int = document.querySelector('.i-11').value;
-
-    console.log(int);
-    for (let i = 0; i < keyboards.length; i++) {
-        keyboards[i].classList.remove('.active');
-        console.log(event.key);
-        // if (int == event.key)
-
-        keyboards[int].classList.toggle('active');
+    let key = event.key;
+    console.log(event.key)
+    if (s[key] !== undefined) {
+        key = s[key];
     }
+
+    for (let i = 0; i < keyboard.length; i++) {
+        keyboard[i].classList.remove('active')
+    }
+
+    let button = document.querySelector(`.keyboard[data="${key}"]`);
+    if (button) button.classList.add('active');
+
 }
 
 document.querySelector('.i-11').onkeydown = t11;
