@@ -18,6 +18,7 @@
 document.querySelector('.out-17-1').innerHTML = +a;
 document.querySelector('.out-17-2').innerHTML = parseInt(a, 10);
 document.querySelector('.out-17-3').innerHTML = Number(a);
+// out11.innerHTML = x + ' ' + y; вывести через пробел два числа либо так `${x}  ${y}`
 // exp % 1 === 0 проверка на целое число
 // let out = '';  =============  если ''; то out += ....... + ' '; будет выводить последовательно элементы, так 4 5 6 7
 // let out = 0;  =============  если 0; то out += ....... + ' '; будет выводить сумму элементов...
@@ -36,6 +37,15 @@ switch (num) {
     default:
         console.log('oooook');
 }
+// случайное число из массиваlet a8 = ['red', 'green', 'blue', 'orange', 'pink', 'yellow'];
+
+function t8() {
+    let min = 0;
+    let max = a8.length - 1;
+    let q = Math.floor(Math.random() * (max - min + 1)) + min;
+    document.querySelector('.div-8').style.background = a8[q];
+}
+
 // урок 4 Работаем с формами: input, range, textarea, checkbox============================================
 document.querySelector('#btn-1').onclick = () => {
     console.log(document.querySelector('#i2').value);
@@ -155,7 +165,7 @@ document.querySelector('.b-6').onclick = function() {
 function t8(str) {
     return str.trim(); // удаления пробелов
 }
-// UNIT 9. РАБОТАЕМ С DOM
+// UNIT 9. РАБОТАЕМ С DOM ===================================================================================================================================
 const one = document.querySelector('.one');
 one.style.width = '150px'; //присвоение стиля элементу
 one.style.paddingBottom = '40px';
@@ -189,7 +199,7 @@ a.onclick = function() {
 }
 document.querySelector('.test').appendChild(a); // appendChild- метод для добавления
 console.log(a);
-// UNIT 10. МАССИВЫ В JAVASCRIPT
+// UNIT 10. МАССИВЫ В JAVASCRIPT ==============================================================================================================================
 // Напишите функцию f12, которая меняет местами нулевой и последний элемент массива ar12 
 let ar12 = ['test', 'west', 'list', 'class', 'best'];
 
@@ -650,7 +660,7 @@ function f19() {
         }
     }
 }
-// UNIT 15. SET
+// UNIT 15. SET =============================================================================================================================================
 let a = new Set();
 a.add(1); // добавить в массив 1
 a.clear(); //очистить весь массив
@@ -695,7 +705,7 @@ const f13 = () => {
 }
 document.querySelector('.b-13').onclick = () => {
         console.log(f13());
-        // UNIT 16. ПЕРЕБОР МАССИВОВ: FOR, FOR IN, FOR OF
+        // UNIT 16. ПЕРЕБОР МАССИВОВ: FOR, FOR IN, FOR OF ===========================================================================================================
         // Task 5
         // При нажатии .b-5 выполняете функцию f5. Функция должна с помощью for of перебрать массив a5 и возвратить новый массив куда входят элементы из a5 большие 7.
         let a5 = [3, 4, 5, 2, 1, 7, 8, 2, 4, 6, 8, 11, 23, 17];
@@ -818,7 +828,7 @@ document.querySelector('.b-13').onclick = () => {
             document.querySelector('.out-11').innerHTML = out;
         }
         document.querySelector('.b-11').addEventListener('click', f11);
-        // UNIT 17. МЕТОДЫ МАССИВОВ: MAP, FILTER ======================================================================
+        // UNIT 17. МЕТОДЫ МАССИВОВ: MAP, FILTER ==============================================================================================================
         // Array.isArray() возвращает true, если объект является массивом и false, если он массивом не является.
         // forEach перебирает каждый элемент вместо цикла
         // filter() создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в функции.
@@ -1183,3 +1193,59 @@ function t9(event) {
     document.querySelector('.out-9').innerHTML = out9_1;
 }
 document.querySelector('.i-9').onkeydown = t9;
+/*  Проект. 
+1. Изучите верстку клавиатуры.
+2. При вводе символа в i-11 ( латиница, нижний регистр) - клавише с таким символом присвойте класс .active. Это окрасит клавишу оранжевым 
+фоном. Перед поиском и присвоением active, с помощью цикла удалите класс active у всех клавиш с классом keyboard.
+3. Если все сделано верно, то при вводе следующего символа, предыдущая клавиша потеряет оранжевый фон, а новая введенная окрасится. 
+4. Самостоятельно добавьте все цифры и второй ряд клавиш от a до l
+5. Самостоятельно добавьте клавишу alt, enter.
+*/
+const keyboard = document.querySelectorAll('.keyboard');
+const s = {
+    "Control": "ctrl",
+    "Enter": "enter",
+    " ": "space",
+    "Alt": "alt",
+}
+
+function t11(event) {
+    let key = event.key;
+    console.log(event.key)
+    if (s[key] !== undefined) {
+        key = s[key];
+    }
+
+    for (let i = 0; i < keyboard.length; i++) {
+        keyboard[i].classList.remove('active')
+    }
+
+    let button = document.querySelector(`.keyboard[data="${key}"]`);
+    if (button) button.classList.add('active');
+
+}
+
+document.querySelector('.i-11').onkeydown = t11;
+// UNIT 21. КРАТКИЙ ОБЗОР TOUCH СОБЫТИЙ =====================================================================================================================
+
+document.querySelector('.block-1').addEventListener("touchstart", myTouch);
+document.querySelector('.block-1').addEventListener("touchend", myTouchEnd);
+document.querySelector('.block-2').addEventListener("touchmove", myTouchMove);
+
+function myTouch(event) { // клик мыши
+    console.log(event);
+    console.log('touch');
+    document.querySelector('.out-1').innerHTML = event.touches.length; // кол- во одновременных нажатий пальцами
+    document.querySelector('.out-2').innerHTML += 'work ';
+}
+
+function myTouchEnd(event) { // нажал и отпустил пальцем
+    document.querySelector('.out-2').innerHTML += 'end';
+}
+
+function myTouchMove(event) { // нажать и потянуть
+    event.preventDefault(); //  что бы блок не сдвигался, плюс в конце события return false;
+    console.log(event);
+    document.querySelector('.out-2').innerHTML += 'move ';
+    return false;
+}
