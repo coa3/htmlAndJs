@@ -41,8 +41,7 @@ document.querySelector('.div-3_2').addEventListener("touchstart", t3);
 
 
 // Task 4 ============================================
-/*  Создайте блок div-4. И кнопку b-4. При нажатии кнопки - добавляйте событие ontouchstart на блок div-4. При событии происходит вывод текста
- touch в out-4.  */
+/*  Создайте блок div-4. И кнопку b-4. При нажатии кнопки - добавляйте событие ontouchstart на блок div-4. При событии происходит вывод текста touch в out-4.  */
 
 let out4 = document.querySelector('.out-4');
 
@@ -89,8 +88,7 @@ document.querySelector('.div-7').addEventListener('touchstart', t7);
 // ваше событие здесь!!!
 
 // Task 8 ============================================
-/*  Дан блок div-8. Добавьте на него событие touch, которое при срабатывании окрашивает блок случаным цветом из массива a8=[red, green, blue,
-     orange, pink, yellow] */
+/*  Дан блок div-8. Добавьте на него событие touch, которое при срабатывании окрашивает блок случаным цветом из массива a8=[red, green, blue, orange, pink, yellow] */
 let a8 = ['red', 'green', 'blue', 'orange', 'pink', 'yellow'];
 
 function t8() {
@@ -143,16 +141,13 @@ document.querySelector('.div-11').addEventListener('touchstart', t11);
 // Task 12 ============================================
 /*  Мини проект. Ознакомьтесь с версткой в задании 12.
 <p>Изучите html код внутри div-12-wrapper.</p>
-<p>1. Добавьте на кнопку nex событие click, touch так, чтобы при событии запускалась функция nextFunction и активным становилось изображение 
-следующее за выделенным 
+<p>1. Добавьте на кнопку nex событие click, touch так, чтобы при событии запускалась функция nextFunction и активным становилось изображение следующее за выделенным 
 классом active-img (рамкой). Соответственно, на активном изображении появляется рамка, а остальные - лишаются рамки.</p>
-<p>2. Добавьте на кнопку prev событие click, touch так, чтобы при событии запускалась функция prevFunction и активным становилось изображение 
-до выделенного классом active-img (рамкой). Соответственно, на активном изображении появляется рамка, а остальные - лишаются рамки.</p>
-<p>3. Учтите краевые эффекты - когда мы доходим до конца или начала, то нажатие кнопки должно приводить к перемещению рамки в начало или конец
- изображений.</p>
+<p>2. Добавьте на кнопку prev событие click, touch так, чтобы при событии запускалась функция prevFunction и активным становилось изображение до выделенного классом 
+active-img (рамкой). Соответственно, на активном изображении появляется рамка, а остальные - лишаются рамки.</p>
+<p>3. Учтите краевые эффекты - когда мы доходим до конца или начала, то нажатие кнопки должно приводить к перемещению рамки в начало или конец изображений.</p>
 <p>4. Добавьте кнопку reset (функция resetFunction), нажатие которой сбрасывает активное изображение на нулевое. </p>
-<p>5. Добавьте во все действия следующее - в изображении img-12-max заменяется src на активную. Т.е. произошло событие - заменилась главная
- картинка.</p>
+<p>5. Добавьте во все действия следующее - в изображении img-12-max заменяется src на активную. Т.е. произошло событие - заменилась главная картинка.</p>
 */
 let bigImg = document.querySelector('.img-12-max');
 const images = document.querySelectorAll('.img-12-min');
@@ -192,17 +187,13 @@ function prevFunction() {
 }
 
 function resetFunction() {
-    if (count + 1 < images.length) {
-        count++
-    } else {
-        count = 1;
-    }
     for (let i = 0; i < images.length; i++) {
         images[i].classList.remove('active-img');
-        count = 0;
+
     }
-    images[0].classList.add('active-img');
-    bigImg.src = images[0].src
+    count = 0;
+    images[count].classList.add('active-img');
+    bigImg.src = images[count].src
 }
 document.querySelector('.next').addEventListener('touchstart', nextFunction);
 document.querySelector('.prev').addEventListener('touchstart', prevFunction);
