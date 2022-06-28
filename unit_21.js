@@ -42,19 +42,14 @@ document.querySelector('.div-3_2').addEventListener("touchstart", t3);
 
 // Task 4 ============================================
 /*  Создайте блок div-4. И кнопку b-4. При нажатии кнопки - добавляйте событие ontouchstart на блок div-4. При событии происходит вывод текста touch в out-4.  */
-
-let out4 = document.querySelector('.out-4');
-
-function t41(event) {
-    out4.innerHTML += 'touch';
-    document.querySelector('.out-6') = 'touchend';
+function t4() {
+    document.querySelector('.div-4').ontouchstart = t41;
 }
 
-function t4(event) {
-    document.querySelector('.div-4').addEventListener('touchstart', t41);
+function t41() {
+    document.querySelector('.out-4').innerHTML += 'touch';
 }
 document.querySelector('.b-4').onclick = t4;
-
 // ваше событие здесь!!!
 
 // Task 5 ============================================
@@ -70,9 +65,9 @@ document.querySelector('.b-5').onclick = t5;
 /*  Добавьте событие ontouchend на div-4. При его срабатывании выведите в out-6 слово touchend. */
 
 function t6() {
-    document.querySelector('.div-4').addEventListener('touchstart', t41);
+    document.querySelector('.out-6').innerHTML = 'touchend';
 }
-
+document.querySelector('.div-4').ontouchend = t6;
 // ваше событие здесь!!!
 
 
@@ -115,12 +110,9 @@ document.querySelector('.div-9').addEventListener('touchstart', t9);
 /*  Дан блок div-10. Добавьте на него событие touchmove. При срабатывании события - увеличивайте его ширину на 1. */
 let w = 75;
 
-function t10(event) {
-
-    // event.preventDefault();
+function t10() {
     document.querySelector('.div-10').style.width = w + 'px';
     w++
-    // return false;
 }
 document.querySelector('.div-10').addEventListener('touchmove', t10);
 // ваше событие здесь!!!
