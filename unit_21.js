@@ -199,6 +199,7 @@ function resetFunction() {
     }
     for (let i = 0; i < images.length; i++) {
         images[i].classList.remove('active-img');
+        count = 0;
     }
     images[0].classList.add('active-img');
     bigImg.src = images[0].src
