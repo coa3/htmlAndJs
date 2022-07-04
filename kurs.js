@@ -408,6 +408,27 @@ function f20() {
     out20.innerHTML = d20.join('');
 }
 // UNIT 12. ДВУМЕРНЫЕ МАССИВЫ==============================================================================================================================
+//  произвидение всеъ чисел массива
+
+multiplyAll([
+    [1, 2],
+    [3, 4],
+    [5, 6, 7]
+]);
+
+function multiplyAll(arr) {
+    let product = 1;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            product = product * arr[i][j];
+
+        }
+
+    }
+    return product;
+}
+
+
 // выводим весь массив 123456789
 let b = [
     [1, 2, 3],
@@ -1417,3 +1438,75 @@ function t5() {
 
 document.querySelector('.b-5').onclick = t5;
 // UNIT 23. LOCALSTORAGE. СОХРАНЯЕМ ВСЕ=============================================================================================================================
+
+window.addEventListener('storage', function(e) {
+    console.log('change');
+    document.querySelector('.out').textContent = localStorage.getItem('b1');
+});
+localStorage.setItem('data', 5); // добавляем в память ключ 'data', значение 5
+console.log(localStorage.getItem('data')); // достаем из памяти значения
+const a = [3, 4, 5];
+localStorage.setItem('a', JSON.stringify(a)); // приводим к string
+let b5 = localStorage.getItem('a');
+b = JSON.parse(b); // приводим к объекту в число
+console.log(b);
+console.log(b[1]);
+console.log(typeof b); // проверяем каким значением является объект b
+const c = {
+    hello: 5,
+    k: 2,
+    4: 'hi'
+};
+localStorage.setItem('c', JSON.stringify(c));
+let d5 = localStorage.getItem('c');
+d = JSON.parse(d);
+console.log(d);
+console.log(typeof b);
+let count5 = 0;
+document.querySelector('.ls').onclick = () => {
+        count++;
+        localStorage.setItem('b1', count);
+    }
+    /* Создайте функцию t2 которая записывает  в LS  массив a2 = [7,6,5]. Ключ a2. Запускается ф-я по кнопкуе b-2. */
+const a21 = [7, 6, 5]
+
+function t2() {
+    localStorage.setItem('a2', JSON.stringify(a2));
+}
+document.querySelector('.b-2').onclick = t2;
+/*  При нажатии кнопки t3 выведите из LS сохранненный массив a2. Выведите в out-3 в формате ключ пробел значение перенос строки.  */
+
+function t3() {
+    let out = ''; // зависит от того что вы хотите. Если нужно при запуске функции строку создавать заново - то внутри. Если хотите накапливать между запусками 
+    // функций - то снаружи.
+    let b = localStorage.getItem('a2');
+    b = JSON.parse(b);
+    for (let i = 0; i < b.length; i++) {
+        out += `${i} ${b[i]}<br>`;
+    }
+    document.querySelector('.out-3').innerHTML = out;
+}
+document.querySelector('.b-3').onclick = t3;
+/*   При нажатии кнопки b-5 выведите из LS сохранненный массив a4. Выведите в out-5 в формате ключ пробел значение перенос строки. */
+
+function t5() {
+    let out = ''; // 
+    let b = localStorage.getItem('a4');
+    b = JSON.parse(b);
+    for (let key in b) {
+        out += `${key} ${b[key]}<br>`;
+    }
+    document.querySelector('.out-5').innerHTML = out;
+}
+document.querySelector('.b-5').onclick = t5;
+/*  Создайте input i-7 куда пользователь может вводить числа и строки. Создайте массив a7. Когда пользователь нажимает кнопку b-7 число 
+должно добавляться в массив. Массив должен сохраняться в LS с ключем a7.*/
+let a9 = []; // если эту строку поместить в функцию, то работать будет НЕ ПРАВИЛЬНО!!!!
+
+function t7() {
+    let int = document.querySelector('.i-7').value;
+    a7.push(int);
+    console.log(a7);
+    localStorage.setItem('a7', JSON.stringify(a7));
+}
+document.querySelector('.b-7').onclick = t7;
