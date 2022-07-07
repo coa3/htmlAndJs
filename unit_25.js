@@ -258,7 +258,7 @@ function t10() {
             myFunction(this.responseText)
         }
     }
-    xhttp2.open("POST", "http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=1", true);
+    xhttp2.open("POST", "http://getpost.itgid.info/index2.php");
 
     xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=1')
@@ -281,10 +281,10 @@ function t11() {
             myFunction(this.responseText)
         }
     }
-    xhttp2.open("POST", "http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=2&name=oleg", true);
+    xhttp2.open("POST", "http://getpost.itgid.info/index2.php");
 
     xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=2')
+    xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=2&name=oleg')
 
     function myFunction(data) {
 
@@ -306,10 +306,10 @@ function t12() {
             myFunction(this.responseText)
         }
     }
-    xhttp2.open("POST", "http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=3&num1=5&num2=8", true);
+    xhttp2.open("POST", "http://getpost.itgid.info/index2.php");
 
     xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=3')
+    xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=3&num1=5&num2=8')
 
     function myFunction(data) {
 
@@ -332,10 +332,10 @@ function t13() {
             myFunction(this.responseText)
         }
     }
-    xhttp2.open("POST", "http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=4&num1=5&num2=8", true);
+    xhttp2.open("POST", "http://getpost.itgid.info/index2.php");
 
     xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=4')
+    xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=4&num1=5&num2=8')
 
     function myFunction(data) {
 
@@ -357,7 +357,7 @@ function t14() {
             myFunction(this.responseText)
         }
     }
-    xhttp2.open("POST", "http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=5", true);
+    xhttp2.open("POST", "http://getpost.itgid.info/index2.php");
 
     xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=5')
@@ -383,10 +383,10 @@ function t15() {
             myFunction(this.responseText)
         }
     }
-    xhttp2.open("POST", "http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=6&num1=5&num2=8", true);
+    xhttp2.open("POST", "http://getpost.itgid.info/index2.php");
 
     xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=6')
+    xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=6&num1=5&num2=8')
 
     function myFunction(data) {
 
@@ -408,7 +408,7 @@ function t16() {
             myFunction(this.responseText)
         }
     }
-    xhttp2.open("POST", "http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=7", true);
+    xhttp2.open("POST", "http://getpost.itgid.info/index2.php");
 
     xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=7')
@@ -433,10 +433,10 @@ function t17() {
             myFunction(this.responseText)
         }
     }
-    xhttp2.open("POST", "http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=8&year=1976", true);
+    xhttp2.open("POST", "http://getpost.itgid.info/index2.php");
 
     xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=8')
+    xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=8&year=1976')
 
     function myFunction(data) {
 
@@ -448,7 +448,9 @@ document.querySelector('.b-17').onclick = t17;
 // ваше событие здесь!!!
 
 // Task 18 ============================================
-/*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 9. В качестве параметра по очереди укажите m = 1, d=1, y=1. Если все сделано верно, сервер возвратит дату или месяц или год. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-18 результат. Запускаться функция должна по нажатию b-18. */
+/*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 9. В качестве параметра по очереди укажите m = 1, d=1, y=1. 
+Если все сделано верно, сервер возвратит дату или месяц или год. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-18 результат. Запускаться
+ функция должна по нажатию b-18. */
 
 function t18() {
     let xhttp2 = new XMLHttpRequest();
@@ -457,10 +459,10 @@ function t18() {
             myFunction(this.responseText)
         }
     }
-    xhttp2.open("POST", "http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=9&m=1&d=1&y=1", true);
+    xhttp2.open("POST", "http://getpost.itgid.info/index2.php");
 
     xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=9')
+    xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=9&m=1&d=1&y=1')
 
     function myFunction(data) {
 
@@ -468,5 +470,3 @@ function t18() {
     }
 }
 document.querySelector('.b-18').onclick = t18;
-
-// ваше событие здесь!!!
