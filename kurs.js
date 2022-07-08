@@ -1562,3 +1562,33 @@ function myFunction2(data) {
     a = data;
     console.log(data);
 }
+
+
+
+
+// UNIT 26. УЧИМ FETCH НА ПРАКТИКЕ ======================================================================================================
+
+fetch('http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcilzg&action=1')
+    .then(data => {
+        console.log(data);
+        // data.text().then(data2 => {
+        //     console.log(data2);
+        // })
+        return data.text();
+    })
+    .then(data => {
+        console.log(data);
+    })
+
+fetch("http://getpost.itgid.info/index2.php", {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+            //'Content-Type': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'auth=zhrgB3DxC8LoG7Gcilzg&action=2&name=alex', // тип данных в body должен соответвовать значению заголовка "Content-Type"
+    })
+    .then(response => response.text())
+    .then(response => {
+        console.log(response);
+    })
