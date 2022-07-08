@@ -1562,8 +1562,41 @@ function myFunction2(data) {
     a = data;
     console.log(data);
 }
+/* Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1.  */
+function t1() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myFunction(this.responseText)
+        }
+    }
+    xhttp.open("GET", "http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=1", true);
+    xhttp.send();
 
+    function myFunction(data) {
+        document.querySelector('.out-1').innerHTML = data;
+    }
+}
+document.querySelector('.b-1').onclick = t1;
+/*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1. Если все сделано верно, сервер пришлет строку hello. .*/
 
+function t10() {
+    let xhttp2 = new XMLHttpRequest();
+    xhttp2.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myFunction(this.responseText)
+        }
+    }
+    xhttp2.open("POST", "http://getpost.itgid.info/index2.php");
+
+    xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=1')
+
+    function myFunction(data) {
+        document.querySelector('.out-10').innerHTML = data;
+    }
+}
+document.querySelector('.b-10').onclick = t10;
 
 
 // UNIT 26. УЧИМ FETCH НА ПРАКТИКЕ ======================================================================================================
