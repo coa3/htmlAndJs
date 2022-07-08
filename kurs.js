@@ -1527,3 +1527,38 @@ function t7() {
     localStorage.setItem('a7', JSON.stringify(a7));
 }
 document.querySelector('.b-7').onclick = t7;
+/// UNIT 25. AJAX - АСИНХРОННЫЙ JAVASCRIPT =================================================================================
+
+// XMLHttpRequest это API, для обмена данными между клиентом и сервером, простой способ получения данных по ссылке без перезагрузки страницы.
+// Это позволяет обновлять только часть веб-страницы не прерывая пользователя. 
+let xhttp = new XMLHttpRequest();
+let a = 0;
+xhttp.onreadystatechange = function() { // .onreadystatechange эта функция вызывается каждый раз когда изменяется значение, что то происходит
+    if (this.readyState == 4 && this.status == 200) { // .readyState отследить изменения значения по кодам. .status статус ответа на 
+        // запрос, прошел не прошел или  другие варианты
+        myFunction(this.responseText) // возвращает текст ответа от сервера на отправленный запрос.в виде строки или null в случае если 
+            // запрос не успешен или ответ ещё не получен.
+    }
+}
+xhttp.open("GET", "http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcilzg&action=1", true); // позволяет запустить запрос
+xhttp.send();
+
+function myFunction(data) {
+    a = data;
+    console.log(data);
+}
+let xhttp2 = new XMLHttpRequest();
+xhttp2.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myFunction2(this.responseText)
+    }
+}
+xhttp2.open("POST", "http://getpost.itgid.info/index2.php?", true);
+xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp2.send('auth=zhrgB3DxC8LoG7Gcilzg&action=1')
+
+function myFunction2(data) {
+    console.log('POSt');
+    a = data;
+    console.log(data);
+}
