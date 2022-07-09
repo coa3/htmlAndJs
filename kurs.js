@@ -1642,3 +1642,33 @@ fetch("http://getpost.itgid.info/index2.php", {
     .then(response => {
         console.log(response);
     })
+    /* Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1. Выведите в out-1 результат. 
+    Запускаться функция должна по нажатию b-1. */
+    // 7859d9d42a8834141d529577207c9596
+function t1() {
+    fetch('http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=1')
+        .then(data => {
+            return data.text();
+        })
+        .then(data => {
+            document.querySelector('.out-1').innerHTML = data;
+        })
+}
+document.querySelector('.b-1').onclick = t1;
+/*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 9. В качестве параметра по очереди укажите 
+m = 1, d=1, y=1. Если все сделано верно, сервер возвратит дату или месяц или год. Не забывайте указывать параметр auth (ключ в чате).  */
+
+function t18() {
+    fetch("http://getpost.itgid.info/index2.php", {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'auth=7859d9d42a8834141d529577207c9596&action=9&m=1&d=1&y=1', // тип данных в body должен соответвовать значению заголовка "Content-Type"
+        })
+        .then(response => response.text())
+        .then(response => {
+            document.querySelector('.out-18').innerHTML = response;
+        })
+}
+document.querySelector('.b-18').onclick = t18;
