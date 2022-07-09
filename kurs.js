@@ -172,22 +172,23 @@ function t7() {
     }
     out7.innerHTML = out;
 }
-// сортировка массива пузырьковым методом, от меньшего к большему
-let m = [1, 2, 3, 4, 10, 6, 7, 8, 9, 5];
+
+// сортировка массива пузырьковым методом, от меньшего к большему---------------
+let m = [1, 2, 3, 4, 10, 6, 7, 8, 9, 5, -25];
 
 function f18() {
-    let count = m.length - 1;
-    for (let i = 0; i < count; i++)
-        for (let j = 0; j < count - i; j++)
+    for (let n = 0; n < m.length; n++) {
+        for (let j = 0; j < m.length - 1; j++)
             if (m[j] > m[j + 1]) {
-                let max = m[j];
+                [m[j], m[j + 1]] = [m[j + 1], m[j]];
+                /*let max = m[j];
                 m[j] = m[j + 1];
-                m[j + 1] = max;
+                m[j + 1] = max;*/
             }
+    }
     console.log(m);
 }
 document.querySelector('.b').onclick = f18;
-
 // UNIT 7. ФУНКЦИИ И ВСЕ О НИХ =========================================================================================
 function one() {
     console.log('work');
