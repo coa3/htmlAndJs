@@ -1672,3 +1672,90 @@ function t18() {
         })
 }
 document.querySelector('.b-18').onclick = t18;
+// UNIT 27. РАБОТАЕМ С ПРОМИСАМИ (PROMISE) ==============================================================================================
+
+let a23 = new Promise((resolve, reject) => {
+    fetch('http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcilzg&action=1')
+        .then(data => {
+            resolve(data.text());
+        })
+
+});
+
+let b23 = new Promise((resolve, reject) => {
+    fetch('http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcilzg&action=2&name=alex')
+        .then(data => {
+            resolve(data.text());
+        })
+
+});
+
+Promise.all([a23, b23]).then(value => {
+    console.log(value);
+    console.log(value[0]);
+    console.log(value[1]);
+});
+/*<p>Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1. </p>
+<p>Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 2. </p>
+<p>Два запроса объедините с помощью promiseAll. 
+*/
+//    7859d9d42a8834141d529577207c9596
+function t1() {
+    let a24 = new Promise((resolve, reject) => {
+        fetch('http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=1')
+            .then(data => {
+                resolve(data.text());
+            })
+    });
+
+    let b24 = new Promise((resolve, reject) => {
+        fetch('http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=2&name=oleg')
+            .then(data => {
+                resolve(data.text());
+            })
+    });
+
+    Promise.all([a24, b24]).then(value => {
+        document.querySelector('.out-1').innerHTML = value;
+    });
+}
+document.querySelector('.b-1').onclick = t1;
+/*  
+ <p>Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1.</p>
+<p>Отправьте
+POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 2. </p>
+<p>Два
+запроса объедините с помощью promiseAll. Результат выведите в out-5 результат. Запускаться функция
+должна по нажатию b-5.</p>
+*/
+
+function t5() {
+    let a25 = new Promise((resolve, reject) => {
+        fetch("http://getpost.itgid.info/index2.php", {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'auth=7859d9d42a8834141d529577207c9596&action=1', // тип данных в body должен соответвовать значению заголовка "Content-Type"
+            })
+            .then(data => {
+                resolve(data.text());
+            })
+    })
+    let b25 = new Promise((resolve, reject) => {
+        fetch("http://getpost.itgid.info/index2.php", {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'auth=7859d9d42a8834141d529577207c9596&action=2&name=oleg', // тип данных в body должен соответвовать значению заголовка "Content-Type"
+            })
+            .then(data => {
+                resolve(data.text());
+            })
+    })
+    Promise.all([a25, b25]).then(value => {
+        document.querySelector('.out-5').innerHTML = value;
+    });
+}
+document.querySelector('.b-5').onclick = t5;
