@@ -1764,7 +1764,7 @@ document.querySelector('.b-5').onclick = t5;
 // UNIT 28. ООП В ES6 ================================================================================================================
 
 function myAlert(a, c, d) {
-    let b = `<p class="${c}">${a}</p>`;
+    let b = `<p class="${c}">${a}</p>`; // создаем класс в дж без хтмл
     document.querySelector(d).innerHTML = b;
 }
 
@@ -1773,22 +1773,22 @@ myAlert('Hello', 'orange', '.test2');
 
 
 // class!!!!!!!!!!!!!!!!!!!!!
-class Alert {
-    constructor(a, c, d) {
-        this.message = a;
-        this.cssClass = c;
-        this.out = d;
+class Alert { // класс это специальные функции,  пишутся с большой буквы
+    constructor(a, c, d) { // конструктор это метод (функция) которая на основании класса запускается объект,
+        this.message = a; // свойства .message - имя свойства даем сами
+        this.cssClass = c; //  свойства
+        this.out = d; //  свойства класса
     }
-    showAlert() {
+    showAlert() { // метод который выполняется при вызове класса
         document.querySelector(this.out).innerHTML = `<p class="${this.cssClass}">${this.message}</p>`;
     }
     myAlert() {
         alert(this.message);
     }
 }
-class Alert2 extends Alert {
+class Alert2 extends Alert { // создание класса алерт2 который расширяет (увеличивает) с помощью команды extends возможности класса алерт
     constructor(a, c, d, icon) {
-        super(a, c, d);
+        super(a, c, d); //  super- вызов конструктора родительского класса, по сути краткий повтор свойств конструктора
         this.icon = icon; // new proper
     }
     showIconAlert() {
@@ -1801,7 +1801,7 @@ class Alert2 extends Alert {
 
 let m4 = new Alert('My message', 'red', '.test');
 console.log(m4);
-m.showAlert();
+m.showAlert(); // m -имя объекта. .showAlert- имя метода
 
 let m2 = new Alert2('My message', 'red', '.test', 'account_balance');
 m2.showIconAlert();
