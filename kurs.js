@@ -19,6 +19,7 @@ let a22 = {
 let z = { color: 'blue' };
 let x = {...a22, ...z }; // заменяет любой одинаковый параметр на последний, в данном случае ключ
 console.log(x);
+// this. элемент на котором происходит событие----------------------
 // Math.max(...[1, 2, 3, ]) // Math.max не принимает массива и что бы найти здесь максимальное число, надо взять в скобки и поставить три точки ...
 // let a = [0, 1, 2, 8] Array.slice(-1)[0]  // находим последнее число массива
 // Помните, что для того, чтобы начать комментарий, вам нужно использовать,
@@ -1759,3 +1760,49 @@ function t5() {
     });
 }
 document.querySelector('.b-5').onclick = t5;
+
+// UNIT 28. ООП В ES6 ================================================================================================================
+
+function myAlert(a, c, d) {
+    let b = `<p class="${c}">${a}</p>`;
+    document.querySelector(d).innerHTML = b;
+}
+
+myAlert('Hi', 'red', '.test');
+myAlert('Hello', 'orange', '.test2');
+
+
+// class!!!!!!!!!!!!!!!!!!!!!
+class Alert {
+    constructor(a, c, d) {
+        this.message = a;
+        this.cssClass = c;
+        this.out = d;
+    }
+    showAlert() {
+        document.querySelector(this.out).innerHTML = `<p class="${this.cssClass}">${this.message}</p>`;
+    }
+    myAlert() {
+        alert(this.message);
+    }
+}
+class Alert2 extends Alert {
+    constructor(a, c, d, icon) {
+        super(a, c, d);
+        this.icon = icon; // new proper
+    }
+    showIconAlert() {
+        document.querySelector(this.out).innerHTML = `<p class="${this.cssClass}"><i class="material-icons">${this.icon}</i> ${this.message}</p>`;
+    }
+    myAlert() {
+        alert('hi!!!' + this.message);
+    }
+}
+
+let m4 = new Alert('My message', 'red', '.test');
+console.log(m4);
+m.showAlert();
+
+let m2 = new Alert2('My message', 'red', '.test', 'account_balance');
+m2.showIconAlert();
+m2.myAlert(this.message);
