@@ -1,57 +1,52 @@
  // Task 1
  // Создайте класс Goods. Класс должен содержать свойства name, amount. Создайте на его основе объект goods. Выведите в консоль созданный объект. 
  //Помните, все классы - в отдельных файлах. Имена классов с большой буквы.
- class Goods {
-     constructor(a, b) {
-         this.name = a;
-         this.amount = b;
 
-     }
- }
  let goods = new Goods();
  console.log(goods);
 
 
  //Task 2.
  //  Добавьте в класс Goods свойства image и count - картинка и количество на складе.
- class Goods2 extends Goods {
+ /*class Goods2 extends Goods {
      constructor(a, b, c, d) {
          super(a, b)
          this.image = c;
          this.count = d;
      }
- }
+ }*/
  //let goods2 = new Goods2();
  //console.log(goods2);
 
  //Task 3.
  //  Добавьте в класс Goods метод draw, который будет выводить div с изображением, названием товара, ценой - в указанный элемент (дозапись).
- class Goods3 extends Goods2 {
+ /*class Goods3 extends Goods2 {
      constructor(a, b, c, d, ) {
          super(a, b, c, d)
 
      }
-     draw() {
-         document.querySelector('.out').innerHTML += `<p class="">${this.name} ${this.amount} <span class="material-symbols-outlined">
-         ${this.image}
-         </span> </p>`;
-     }
+    
  }
- let goods3 = new Goods3('book', '50', 'star');
- goods3.draw();
+ goods = new Goods('book', '50', 'star');
+ goods.draw();*/
 
- console.log(goods3);
  // Task 4.
  // Создайте на основе класса Goods объект goods2, заполните свойства, примените метод draw для вывода товара на страницу в блок out-4.
-
+ let goods2 = new Goods('book', '50', 'star');
+ goods2.draw();
 
  //Task 5.
- // Создайте класс Goods2, который наследуется от Goods. Добавьте ему свойство sale равное true или false. Перезапишите метод draw так, чтобы он выводил информацию о распродажах.
+ // Создайте класс Goods2, который наследуется от Goods. Добавьте ему свойство sale равное true или false. Перезапишите метод draw так, чтобы 
+ //он выводил информацию о распродажах.
+ goods2 = new Goods2('book', '50', 'true');
+ goods2.draw();
 
 
  // Task 6.
- // Создайте на основе класса Goods2 объект goods3. Заполните все поля. Выведите товар на страницу с помощью метода draw. Вывод осуществить в out-6.
-
+ // Создайте на основе класса Goods2 объект goods3. Заполните все поля. Выведите товар на страницу с помощью метода draw.
+ // Вывод осуществить в out-6.
+ let goods3 = new Goods('book', '50', 'star');
+ goods3.draw();
 
  // Task 7.
  // Создайте класс Valid, который содержит свойства email, password, isValid. И метод validate. Метод validate должен проверять длину пароля и писать false в isValid если длина меньше 6 и true если больше. Изначально свойство isValid равно false.
