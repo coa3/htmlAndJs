@@ -45,8 +45,65 @@
  // Task 6.
  // Создайте на основе класса Goods2 объект goods3. Заполните все поля. Выведите товар на страницу с помощью метода draw.
  // Вывод осуществить в out-6.
- let goods3 = new Goods('book', '50', 'star');
- goods3.draw();
+ // этот код идет в отдельном файле Goods.js //
+ class Goods {
+     constructor(name, amount, image, count) {
+         this.name = name;
+         this.amount = amount;
+         this.image = image;
+         this.count = count;
+     }
+     draw() {
+         // создаем div где товар будет помещаться
+         let div = document.createElement('div');
+         // создаем элемент с именем и добавляем в div
+         let n = document.createElement('p');
+         n.innerText = this.name;
+         div.append(n);
+         // создаем картинку
+         let img = document.createElement('img');
+         img.src = this.image;
+         div.append(img);
+         // аналогично создаете amount, count
+
+         // почему не выводим здесь? Потому что мы делаем гибкий метод
+         // он должен давать и наследоваться и расшираться
+         return div;
+     }
+ }
+ // тут конец файла Goods.js
+ // этот код пишем в общем файле unit_28.js
+
+ // создаем объект
+ let g1 = new Goods('cucumber', 50, 'https://cdn1.iconfinder.com/data/icons/vegetable-colored/48/Plants_Vegetables_Artboard_9-256.png', 300);
+ // создаем объект для вставки на страницу
+ let g1Obj = g1.draw();
+ // вставляем
+ document.querySelector('.out-1').append(g1Obj);
+ // такой подход удобен тем что мы можем создавать много товаров и выводить куда хотим.
+
+ class Goods2 extends Goods {
+     constructor(name, amount, image, count, sale) {
+         super(name, amount, image, count);
+         this.sale = sale;
+     }
+     draw() {
+         let div = super.draw();
+         if (this.sale) {
+             // create div с надписью sale
+             let d = document.createElement('div');
+             d.innerHTML = 'sale';
+             div.append(d);
+         }
+         return div;
+     }
+ }
+
+ let g2 = new Goods2('cucumber22', 100, 'https://cdn1.iconfinder.com/data/icons/vegetable-colored/48/Plants_Vegetables_Artboard_9-256.png', 300, true);
+ // создаем объект для вставки на страницу
+ let g1Obj2 = g2.draw();
+ // вставляем
+ document.querySelector('.out-2').append(g1Obj2);
 
  // Task 7.
  // Создайте класс Valid, который содержит свойства email, password, isValid. И метод validate. Метод validate должен проверять длину пароля и писать false в isValid если длина меньше 6 и true если больше. Изначально свойство isValid равно false.
