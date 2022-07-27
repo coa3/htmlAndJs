@@ -153,3 +153,16 @@ function f19() {
 function f19(frend) {
     return frend.filter(n => n.length === 4) // обалдеть как проще!!!!!!!!!!!!!!!!!!!!!!!!!!!1
 }
+//-------------------------сортировка по возрастанию и сумма наименьших чисел массива
+let n = [5, 879, 8, 852, 321, 1];
+
+function f19() {
+    n.sort((a, b) => a - b); // в точности такой метод обязателен 
+    console.log(n[0] + n[1]);
+}
+// ---------------------------------- находим уникальное число в массиве
+function findUniq(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr.lastIndexOf(arr[i]) === arr.indexOf(arr[i])) return arr[i]
+    }
+}
