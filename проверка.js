@@ -1,16 +1,16 @@
-function fff() {
-    let args = [78, 56, -232, 12, 8];
-    let min = '';
-    let a = args[0];
-    for (let i = 0; i < args.length; i++) {
-        if (args[i] < a) {
-            min = args[i];
+let x = '1234';
+
+function f19() {
+    let ar = [...x];
+    console.log(ar);
+    for (let i = 0; i < ar.length; i++) {
+        if (typeof(ar[i]) === 'number' && ar.length == 4) {
+            console.log(true);
+            return true;
+        } else {
+            console.log(false);
+            return false;
         }
-
     }
-    console.log(min);
-    return min;
 }
-fff();
-
-//document.querySelector('.b').onclick = spinWords();
+document.querySelector('.b').onclick = f19;
