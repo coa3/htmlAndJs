@@ -1861,3 +1861,28 @@ function sum(arr, n) {
         return sum(arr, n - 1) + arr[n - 1];
     }
 }
+
+// дополнить курс на работе этим ===============================================================================================================>>>>
+function findGreaterOrEqual(a, b) {
+    if (a === b) {
+        return "a and b are equal";
+    } else if (a > b) {
+        return "a is greater";
+    } else {
+        return "b is greater";
+    }
+} // аналог
+function findGreaterOrEqual(a, b) {
+    return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
+}
+const myFunc1 = () => {
+        const myVar = "value";
+        return myVar;
+    } // analog
+const myFunc = () => "value";
+//------------------------------
+const doubler = (item) => item * 2;
+//analog const doubler = item => item * 2;
+//---------------------------------analog
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr);
