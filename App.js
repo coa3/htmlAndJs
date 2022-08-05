@@ -3,29 +3,18 @@ import React from 'react';
 import Header from './components/Header';
 
 import './App.css';
-import Navbar from './components/Navbar';
+
 import Profile from './components/Profile';
+import Navbar from './components/Navbar';
 
 const App = () => {
   return (
     <div className='app-wrapper'>
 <Header />
 <Navbar />
-<Profile /> 
+<Profile />
 </div>      
 );
 }
 
 export default App;
- 
-  
-  
-  
-  
-
-
-  
-
-    
-  
-
