@@ -1,5 +1,6 @@
 !+кнопка tab = выводит шаблон html страницы!!!!
-    // && - и  || или
+    // && - и 
+    // || или
     // if (i % 2 === 0)
     // Помните, что для того, чтобы начать комментарий, вам нужно использовать,
     <!--а чтобы закончить комментарий, вам нужно использовать-->
@@ -10,6 +11,7 @@
 document.querySelector('.out-17-1').innerHTML = +a;
 document.querySelector('.out-17-2').innerHTML = parseInt(a, 10);
 document.querySelector('.out-17-3').innerHTML = Number(a);
+exp % 1 === 0 проверка на целое число
 one.style.width = '150px'; //присвоение стиля элементу
 one.style.paddingBottom = '40px';
 
@@ -73,6 +75,28 @@ function repeatStr(n, s) {
         n--;
     }
     return myString;
+}
+//Возвращает массив, где первый элемент — это количество положительных чисел, а второй элемент — сумма отрицательных чисел. 0 не является ни положительным, ни
+// отрицательным.
+function countPositivesSumNegatives(t) {
+    let col = [];
+    let sum = 0;
+    let out = [];
+    for (let i = 0; i < t.length; i++) {
+        if (t[i] > 0) {
+            col.push(t[i]);
+        }
+        if (t[i] < 0) {
+            sum += t[i];
+        } else {
+            return [];
+        }
+    }
+
+    let x = col.length;
+    out.push(x);
+    out.push(sum);
+    return out;
 }
 
 let a = document.createElement('div'); // createElement- создает элемент div
@@ -1313,3 +1337,15 @@ function squareSum(numbers) {
         function booleanToString(b) {
             return b.toString();
         }
+        // регулярные выражения =========================================================================================================
+        "Hello, World!".match(/Hello/); // Здесь первое совпадение вернет ["Hello"], а второе — ["expressions"]
+        let ourStr = "Regular expressions"; // Обратите внимание, что синтаксис .match является «противоположным» методу .test
+        let ourRegex = /expressions/;
+        ourStr.match(ourRegex);
+        // /ignorecase/i игнорирует регистр -i
+        // testStr.match(/Repeat/g) g- найдет все выражения с этим флагом
+        // /k.l/  . точка замена символа в выражении
+        // /Например, вы хотите сопоставить bag, big, и bug, но не bog. Для этого вы можете создать регулярное /b[aiu]g/выражение.
+        // [aiu]Это класс символов , который будет соответствовать только символам a, i, или u.
+        // /[aeiou]/gi найти все гласные, g- флаг все, i- игнорирует регистр
+        //Классы символов позволяют вам определить группу символов, которые вы хотите сопоставить, поместив их внутри квадрата ([ и ])
