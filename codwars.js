@@ -206,4 +206,11 @@ function simpleMultiplication(n) {
     return value* 9;
     }    
 }
------------------------------
+----------------------------- произвидение чисел массива
+function grow(x){
+    let out = 1;
+      for (let i = 0; i < x.length; i++){
+        out *= x[i];
+      } return out;
+    }
+    // аналог const grow=x=> x.reduce((a,b) => a*b)
