@@ -193,24 +193,113 @@ function findUniq(arr) {
         if (arr.lastIndexOf(arr[i]) === arr.indexOf(arr[i])) return arr[i]
     }
 }
---------------------------умножении заданного числа на восемь, если оно четное, и на девять в противном случае
+//--------------------------умножении заданного числа на восемь, если оно четное, и на девять в противном случае
 function simpleMultiplication(n) {
     return n * (n % 2 ? 9 : 8);
 }
-аналог function simpleMultiplication(value){
-    
-    if(value%2===0 ){
-     return value *8
-    }
-    else{
-    return value* 9;
-    }    
+//аналог function simpleMultiplication(value){
+
+if (value % 2 === 0) {
+    return value * 8
+} else {
+    return value * 9;
 }
------------------------------ произвидение чисел массива
-function grow(x){
+
+//----------------------------- произвидение чисел массива
+function grow(x) {
     let out = 1;
-      for (let i = 0; i < x.length; i++){
+    for (let i = 0; i < x.length; i++) {
         out *= x[i];
-      } return out;
     }
-    // аналог const grow=x=> x.reduce((a,b) => a*b)
+    return out;
+}
+// аналог const grow=x=> x.reduce((a,b) => a*b)
+//--------камень ножницы бумага
+const rps = (p1, p2) => {
+    if (p1 == p2)
+        return 'Draw!';
+
+    if (p1 == 'rock' && p2 == 'scissors')
+        return 'Player 1 won!'
+    else if (p1 == 'scissors' && p2 == 'paper')
+        return 'Player 1 won!'
+    else if (p1 == 'paper' && p2 == 'rock')
+        return 'Player 1 won!'
+    else
+        return 'Player 2 won!';
+};
+//-----------------------Учитывая массив целых чисел в виде строк и чисел, верните сумму значений массива, как если бы все они были числами.
+function sumMix(n) {
+    let sum = 0;
+    for (let i = 0; i < n.length; i++) {
+        sum += +n[i];
+    }
+    return sum;
+} // return x.map(a => +a).reduce((a, b) => a + b);    аналог
+let result = 0;
+for (let n of x) {
+    result += parseInt(n);
+}
+
+// return x == w ? x*w : 2*(x + w) если x равно w то  x*w иначе 2*(x + w)
+//-- -- -- -- -- -- -- -- -- -- --удалить пробелы из строк
+
+function noSpace(x) {
+    return x.split(' ').join('')
+}
+const str5 = '   Hello World   ';
+console.log(str.replace(/ /g, ''));
+//--------возвести в квадрат каждую цифру числа и объединить их. Например, если мы запустим 9119 через функцию, получится 811181, потому что 9 2 равно 
+// 81, а 1 2 равно 1. Примечание: функция принимает целое число и возвращает целое число
+let n2 = 3212;
+
+function f19() {
+    let b = n + ''; //преобразуем число в строку "3212"
+    let m = Array.from(b) // разбиваем каждый символ в отдельный элемнент и преобразуем в массив ["3","2","1","2"]
+    let out = '';
+    for (let i = 0; i < m.length; i++) {
+        out += m[i] * m[i];
+    }
+    console.log(+out); // +out преобразует обратно в число
+} // аналог return +num.toString().split('').map(i => i*i).join('');
+// ------строка чисел, разделенных пробелами, и вы должны вернуть наибольшее и наименьшее число
+function highAndLow(numbers) {
+    numbers = numbers.split(' '); //азбивает объект String на массив строк путём разделения строки указанной подстрокой ['8', '3', '-5']
+    return `${Math.max(...numbers)} ${Math.min(...numbers)}`;
+
+}
+//---------Ваша задача - вернуть средний символ слова. Если длина слова нечетная, верните средний символ. Если длина слова четная, верните 2 средних символа.
+function getMiddle(n) {
+    let x = n.length; // 3
+    let z = Math.floor(x / 2); // 3/2=1.5 okrug 1 
+    if (x == 1) {
+        return n[z];
+    } else if (x % 2 != 0) {
+        return n[z];
+    } else {
+        return (n[z - 1] + n[z]);
+    }
+}
+//------Учитывая целое число, определите, является ли оно квадратным числом:
+function f19(n) {
+    if (n < 0) {
+        console.log(false);
+    } else if (n == 0) {
+        console.log(true);
+
+    } else if (n % (Math.sqrt(n)) == 0) {
+        console.log(true);
+
+    } else { console.log(false); }
+}
+// анаог  return Math.sqrt(n) % 1 === 0;
+function f19() {
+    if (n < 0 && n % (Math.sqrt(n)) != 0) console.log(false);
+    else if (n == 0 || n % (Math.sqrt(n)) == 0) console.log(true);
+}
+
+function f19() {
+    (n < 0 && n % (Math.sqrt(n)) != 0) ?
+    console.log(false): console.log(true);
+}
+//-----
