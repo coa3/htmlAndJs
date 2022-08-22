@@ -1,22 +1,18 @@
-let n = 123456789;
+let n = "How can mirrors be real if our eyes aren't real";
 
-function f19() {
-    let r = n + '';
-    let m = Array.from(r);
+String.prototype.toJadenCase = function f19() {
+    let m = n.split(/\s+/).map(word => word[0].toUpperCase() + word.substring(1)).join(' ')
+        //n.split(' ');   ['How', 'can', 'mirrors', 'be', 'real', 'if', 'our', 'eyes', "aren't", 'real']
+        // (/\s+/)  \s - пробелы +  от еденицы и больше (от еденицы и больше это все что идет сразу после пробелов, как раз все первые буквы каждого слова!!!!)
+        // .map(word => word[0].toUpperCase() [0] преобразовать в верхний регистр
+        // .substring(1). substring()- возвращает подстроку строки между двумя индексами, или от одного индекса и до конца строки. от 1 индекса и до конца слова
+        // join(' ') - ставим пробел между словами
     console.log(m);
+    // How Can Mirrors Be Real If Our Eyes Aren 't Real
+    // How Can Mirrors Be Real If Our Eyes Aren 't Real
 
-    let out = [];
-    for (let i = 0; i < m.length; i++) {
-        out.push(+m[i]);
-    }
-    console.log(out);
-
-    console.log(out.sort((a, b) => b - a))
-    let x = +out.join("");
-    console.log(x)
-
-    //console.log(out.replace(/[,]/g, ''));
 }
+
 
 //r = r.split(' ').join('')
 
