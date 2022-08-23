@@ -328,3 +328,16 @@ function f19() {
         // .substring(1). substring()- возвращает подстроку строки между двумя индексами, или от одного индекса и до конца строки. от 1 индекса и до конца слова
         // join(' ') - ставим пробел между словами
 }
+//----------------------------одинаковое количество символов "x" и "o".
+let n8 = "ooXx";
+
+function f19() {
+    let m = n.toLowerCase().split(''); // ['o', 'o', 'x', 'x']
+    let count = 0;
+    for (let i = 0; i < m.length; i++) {
+        if (m[i] == 'o') count++
+            if (m[i] == 'x') count--
+    }
+    if (count === 0) return true;
+    else return false;
+} // аналог return str.replace(/o/ig, '').length == str.replace(/x/ig, '').length

@@ -12,7 +12,7 @@
 // let b = [4,5,6];
 // let c = [...a, ...b] это объединяет массивы [1, 2, 3, 4, 5, 6]
 // -----------------сделать все первые буквы главными
-let n6 = "How can mirrors be real if our eyes aren't real";
+let n7 = "How can mirrors be real if our eyes aren't real";
 
 function f19() {
     let m = n.split(/\s+/).map(word => word[0].toUpperCase() + word.substring(1)).join(' ')
@@ -27,7 +27,8 @@ let n = 5248971;
 
 function f19() {
     let r = n + ''; // преобразуем число в строку
-    let m = Array.from(r) // разбиваем каждый символ в отдельный элемнент и преобразуем в массив ['5', '2', '4', '8', '9', '7', '1']
+    let m = Array.from(r) // разбиваем каждый символ в отдельный элемнент и преобразуем в массив ['5', '2', '4', '8', '9', '7', '1'] 
+        // аналог того что выше n.toLowerCase().split(''); // ['o', 'o', 'x', 'x']
     let out = [];
     for (let i = 0; i < m.length; i++) {
         out.push(+m[i]); // каждый элемент массива переводим в число [5, 2, 4, 8, 9, 7, 1]
