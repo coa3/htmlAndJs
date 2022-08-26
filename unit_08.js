@@ -26,13 +26,11 @@ document.querySelector('.b-1').onclick = t1;
 // от 2 до 46 c шагом 2. Разделитель - нижнее подчеркивание. Задача решается с помощью цикла  while.
 let out2 = document.querySelector('.out-2');
 
-
 function t2() {
     let k2 = 0;
     let z2 = '';
     while (k2 < 46) {
         z2 += `${k2 +=2}_`;
-        k2++;
     }
     out2.innerHTML = z2;
 }
