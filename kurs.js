@@ -11,9 +11,8 @@
 // let a = [1,2,3];
 // let b = [4,5,6];
 // let c = [...a, ...b] это объединяет массивы [1, 2, 3, 4, 5, 6]
-str.trim(); // убирает пробелы в начале и вконце строки.
 // -----------------сделать все первые буквы главными
-let n7 = "How can mirrors be real if our eyes aren't real";
+let n6 = "How can mirrors be real if our eyes aren't real";
 
 function f19() {
     let m = n.split(/\s+/).map(word => word[0].toUpperCase() + word.substring(1)).join(' ')
@@ -28,8 +27,7 @@ let n = 5248971;
 
 function f19() {
     let r = n + ''; // преобразуем число в строку
-    let m = Array.from(r) // разбиваем каждый символ в отдельный элемнент и преобразуем в массив ['5', '2', '4', '8', '9', '7', '1'] 
-        // аналог того что выше n.toLowerCase().split(''); // ['o', 'o', 'x', 'x']
+    let m = Array.from(r) // разбиваем каждый символ в отдельный элемнент и преобразуем в массив ['5', '2', '4', '8', '9', '7', '1']
     let out = [];
     for (let i = 0; i < m.length; i++) {
         out.push(+m[i]); // каждый элемент массива переводим в число [5, 2, 4, 8, 9, 7, 1]
@@ -268,8 +266,11 @@ one.style.width = '150px'; //присвоение стиля элементу
 one.style.paddingBottom = '40px';
 // console.log(one.style);
 one.classList.add('two', 'three'); // add- присвоение и добавление класса
+one.appendChild(a) // добавить див
 one.classList.remove('three'); // remove-  удаление класса
 one.classList.toggle('three'); // toggle- переключатель
+one.before(a); // Созданный div добавляется перед другим дивом, а если after то после
+one.replaceWith(a); // заменяет существующий див на указанный вами, новый
 one.classList.contains('three'); //contains- проверка на наличие класса, если есь класс .three то true, 
 //если нет то false
 const toggle = document.querySelector('.toggle');
