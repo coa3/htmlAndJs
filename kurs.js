@@ -344,6 +344,16 @@ function f18() {
         }
     }
 }
+// Выведите массив ar13 в out-13 в формате индекс пробел значение пробел.
+function f13() {
+    let out = '';
+    for (i = 0; i < ar13.length; i++) {
+        out += `${ar13.indexOf(ar13[i])} ${ar13[i]} `;
+    }
+    out13.innerHTML = out;
+}
+
+
 // минимал элемент массива
 
 function f19() {
