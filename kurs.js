@@ -11,8 +11,9 @@
 // let a = [1,2,3];
 // let b = [4,5,6];
 // let c = [...a, ...b] это объединяет массивы [1, 2, 3, 4, 5, 6]
+str.trim(); // убирает пробелы в начале и вконце строки.
 // -----------------сделать все первые буквы главными
-let n6 = "How can mirrors be real if our eyes aren't real";
+let n7 = "How can mirrors be real if our eyes aren't real";
 
 function f19() {
     let m = n.split(/\s+/).map(word => word[0].toUpperCase() + word.substring(1)).join(' ')
@@ -27,7 +28,8 @@ let n = 5248971;
 
 function f19() {
     let r = n + ''; // преобразуем число в строку
-    let m = Array.from(r) // разбиваем каждый символ в отдельный элемнент и преобразуем в массив ['5', '2', '4', '8', '9', '7', '1']
+    let m = Array.from(r) // разбиваем каждый символ в отдельный элемнент и преобразуем в массив ['5', '2', '4', '8', '9', '7', '1'] 
+        // аналог того что выше n.toLowerCase().split(''); // ['o', 'o', 'x', 'x']
     let out = [];
     for (let i = 0; i < m.length; i++) {
         out.push(+m[i]); // каждый элемент массива переводим в число [5, 2, 4, 8, 9, 7, 1]
@@ -260,17 +262,81 @@ document.querySelector('.b-6').onclick = function() {
 function t8(str) {
     return str.trim(); // удаления пробелов
 }
+// UNIT 8 Цикл While, Do While================================================================================================================
+for (let i = 0; i < 6; i++) {
+    console.log(i);
+}
+
+let k3 = 0;
+while (k < 5) {
+    k++;
+    console.log('k: ' + k);
+}
+// 0 +... + 10 // 1+2+3
+
+let sum = 0;
+let p = 0;
+while (p <= 3) {
+    sum = sum + p;
+    p++;
+}
+console.log('sum = ' + sum);
+// ****
+// ****
+// ****
+let out32 = document.querySelector('.out');
+p = 0;
+let outStr = '';
+let flag = 3;
+
+while (p < 4) {
+    let p1 = 0;
+    while (p1 < 4) {
+        if (p1 < flag) {
+            outStr += '0';
+        } else {
+            outStr += '*';
+        }
+        p1++;
+    }
+    flag--;
+    outStr += '<br>';
+    p++;
+}
+
+out.innerHTML = outStr;
+// Функция должна выводить в .out-1 строку вида  1_2_3_4_5_6_7_8_9_ ... 49_50_
+let out1 = document.querySelector('.out-1');
+
+function t1() {
+    let k1 = 1;
+    let z1 = '';
+    while (k1 < 51) {
+        z1 += `${k1}_`;
+        k1++;
+    }
+    out1.innerHTML = z1;
+}
+// Функция должна выводить в  2_4_6_ ... 44_46_
+
+let out25 = document.querySelector('.out-2');
+
+function t2() {
+    let k2 = 0;
+    let z2 = '';
+    while (k2 < 46) {
+        z2 += `${k2 +=2}_`;
+    }
+    out2.innerHTML = z2;
+}
 // UNIT 9. РАБОТАЕМ С DOM ===================================================================================================================================
 const one = document.querySelector('.one');
 one.style.width = '150px'; //присвоение стиля элементу
 one.style.paddingBottom = '40px';
 // console.log(one.style);
 one.classList.add('two', 'three'); // add- присвоение и добавление класса
-one.appendChild(a) // добавить див
 one.classList.remove('three'); // remove-  удаление класса
 one.classList.toggle('three'); // toggle- переключатель
-one.before(a); // Созданный div добавляется перед другим дивом, а если after то после
-one.replaceWith(a); // заменяет существующий див на указанный вами, новый
 one.classList.contains('three'); //contains- проверка на наличие класса, если есь класс .three то true, 
 //если нет то false
 const toggle = document.querySelector('.toggle');
@@ -344,16 +410,6 @@ function f18() {
         }
     }
 }
-// Выведите массив ar13 в out-13 в формате индекс пробел значение пробел.
-function f13() {
-    let out = '';
-    for (i = 0; i < ar13.length; i++) {
-        out += `${ar13.indexOf(ar13[i])} ${ar13[i]} `;
-    }
-    out13.innerHTML = out;
-}
-
-
 // минимал элемент массива
 
 function f19() {
