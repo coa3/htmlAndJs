@@ -1,60 +1,52 @@
-        body {
-            background-color: #ffe2b0;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        ul {
-            list-style: none;
-            text-align: center;
-            padding: 0px;
-        }
-        
-        a {
-            color: black;
-            text-decoration: none;
-            font-size: 18px;
-            margin-top: 50px;
-        }
-        
-        li {
-            display: inline;
-            margin-right: 100px;
-        }
-        
-        li:last-child {
-            margin-right: 0px;
-        }
-        
-        nav {
-            margin-bottom: 20px;
-        }
-        
-        .section-about {
-            height: 640px;
-            background-image: url(../img/01-Картинка-фона.jpg);
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            position: relative;
-        }
-        
-        .section-about__block {
-            height: 190px;
-            width: 420px;
-            background: linear-gradient(180deg, rgba(244, 213, 178, 0.8)0%, rgba(234, 156, 65, 0.8) 100%);
-            position: absolute;
-            top: 349px;
-            left: 730px;
-        }
-        
-        .section-about__border {
-            height: 160px;
-            width: 390px;
-            border: 1px solid black;
-            margin: 0 auto;
-            margin-top: 15px;
-        }
+body {
+    font-size: 16px;
+}
+
+.body-bg {
+    background-image: url('../images/bois-texture-1456353976vDQ.jpg');
+    background-size: cover;
+}
+
+.cv {
+    margin-top: 50px;
+    border: 1px solid #4b4b4b;
+    box-shadow: 1px 1px 10px #000;
+}
+
+.cv-left {
+    background: #4b4b4b;
+    min-height: 30vh;
+    color: #fff;
+}
+
+.cv-right {
+    background: #fff;
+    min-height: 30vh;
+    color: #131313;
+}
+
+.photo-block {}
+
+.cv-left a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.cv-left a:hover {
+    text-decoration: none;
+}
+
+.cv-left ul {
+    line-height: 175%;
+    padding-left: 30px;
+}
+
+.cv-left ul.contacts-block {
+    /*убираем маркеры слева*/
+    list-style-type: none;
+    padding-left: o;
+}
+
+.cv-left .address {
+    font-style: italic;
+}
